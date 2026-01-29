@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ | 株式会社クリーンサービス</title>
+    <meta name="description" content="株式会社クリーンサービスへのお問い合わせはこちら。電話、またはメールフォームより承ります。お見積もりは無料です。">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/favicon.ico" sizes="any">
+    <link rel="shortcut icon" href="img/favicon.ico">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <img src="img/y-logo.png">
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="strength.html">当社の強み</a></li>
+                    <li><a href="company.html">会社概要</a></li>
+                    <li><a href="service.html">サービス</a></li>
+                    <li><a href="case_study.html">実績・事例</a></li>
+                    <li><a href="price.html">料金</a></li>
+                    <li><a href="contact.html" class="btn btn-nav" style="padding: 10px 20px;">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1 class="page-title">お問い合わせ</h1>
+        </div>
+    </div>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb-list">
+                <li class="breadcrumb-item"><a href="index.html">TOP</a></li>
+                <li class="breadcrumb-item">お問い合わせ</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <section class="section">
+        <div class="container contact-section">
+            <p style="margin-bottom: 40px;">
+                清掃に関するご相談、お見積もりのご依頼は、<br>
+                お電話または下記フォームよりお気軽にお問い合わせください。
+            </p>
+
+            <div style="background: var(--color-bg-section); padding: 40px; border-radius: 8px; margin-bottom: 60px;">
+                <h3 style="margin-bottom: 10px; font-weight: bold;">お電話でのお問い合わせ</h3>
+                <div class="contact-phone">
+                    <i class="fa-solid fa-phone" style="font-size: 0.8em; margin-right: 15px;"></i>03-1234-5678
+                </div>
+                <p>受付時間: 9:00〜18:00（土日祝除く）</p>
+            </div>
+
+            <h3 class="section-title" style="font-size: 1.5rem;">お問い合わせフォーム</h3>
+
+            <form class="contact-form" action="https://formspree.io/f/xwvowvla" method="POST">
+                <div class="form-group">
+                    <label class="form-label">お名前 (法人名) <span
+                            style="color:red; font-size: 0.8em; margin-left: 5px;">*</span></label>
+                    <input
+                        type="text"
+                        class="form-input"
+                        name="name"
+                        placeholder="例：株式会社〇〇 / 山田 太郎"
+                        required
+                    >
+                </div>
+            
+                <div class="form-group">
+                    <label class="form-label">電話番号 <span
+                            style="color:red; font-size: 0.8em; margin-left: 5px;">*</span></label>
+                    <input
+                        type="tel"
+                        class="form-input"
+                        name="tel"
+                        placeholder="03-1234-5678"
+                    >
+                </div>
+            
+                <div class="form-group">
+                    <label class="form-label">メールアドレス <span
+                            style="color:red; font-size: 0.8em; margin-left: 5px;">*</span></label>
+                    <input
+                        type="email"
+                        class="form-input"
+                        name="email"
+                        placeholder="info@example.com"
+                        required
+                    >
+                </div>
+            
+                <div class="form-group">
+                    <label class="form-label">お問い合わせ内容 <span
+                            style="color:red; font-size: 0.8em; margin-left: 5px;">*</span></label>
+                    <textarea
+                        class="form-textarea"
+                        name="message"
+                        placeholder="ご用件をご記入ください"
+                        required
+                    ></textarea>
+                </div>
+            
+                <div style="text-align: center;">
+                    <button type="submit" class="btn btn-large" style="border: none; cursor: pointer;">
+                        送信する
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 株式会社クリーンサービス Co., Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
