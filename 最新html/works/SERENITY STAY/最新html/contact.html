@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Serenity Stay</title>
+    <meta name="description" content="Contact us for inquiries or reservations.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header fade-up">
+        <div class="logo"><a href="index.html">SERENITY STAY</a></div>
+        <nav>
+            <ul>
+                <li><a href="about.html">Concept</a></li>
+                <li><a href="rooms.html">Rooms</a></li>
+                <li><a href="dining.html">Dining</a></li>
+                <li><a href="spa.html">Spa</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="access.html">Access</a></li>
+                <li><a href="reservation.html" class="reserve-btn">Reserve</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-toggle">
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- Sub Hero -->
+    <div class="sub-hero"
+        style="background-image: url('img/contact_main.png');">
+        <div class="sub-hero-content fade-up">
+            <h1>Contact</h1>
+            <p>お問い合わせ</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+
+        <section class="content-section">
+            <div class="container form-container fade-up">
+
+                <div class="center-layout" style="margin-bottom: 4rem;">
+                    <p style="text-align: center;">
+                        ご宿泊に関するご質問や、特別なリクエストがございましたら、<br>
+                        お気軽に下記フォームよりお問い合わせください。<br>
+                        静謐な空間で、皆様をお迎えできる日を心よりお待ちしております。
+                    </p>
+                </div>
+
+                <form action="#" method="post" class="contact-form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" id="name" name="name" class="form-input" required placeholder="お名前">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" name="email" class="form-input" required placeholder="メールアドレス">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject" class="form-label">Subject</label>
+                        <select id="subject" name="subject" class="form-select">
+                            <option value="">お問い合わせ件名を選択してください</option>
+                            <option value="reservation">ご宿泊について</option>
+                            <option value="dining">お食事について</option>
+                            <option value="other">その他のお問い合わせ</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" name="message" class="form-textarea" required
+                            placeholder="お問い合わせ内容"></textarea>
+                    </div>
+
+                    <div class="form-submit">
+                        <button type="submit" class="btn-submit">Send Message</button>
+                    </div>
+                </form>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container fade-up">
+            <div class="logo">SERENITY STAY</div>
+            <div class="footer-links">
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+            </div>
+            <p class="copyright">&copy; 2026 Serenity Stay. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

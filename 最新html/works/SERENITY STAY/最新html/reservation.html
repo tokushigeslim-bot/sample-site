@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation | Serenity Stay</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header fade-up">
+        <div class="logo"><a href="index.html">SERENITY STAY</a></div>
+        <nav>
+            <ul>
+                <li><a href="about.html">Concept</a></li>
+                <li><a href="rooms.html">Rooms</a></li>
+                <li><a href="dining.html">Dining</a></li>
+                <li><a href="spa.html">Spa</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="access.html">Access</a></li>
+                <li><a href="reservation.html" class="active">Reserve</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-toggle">
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- Sub Hero -->
+    <section class="sub-hero fade-up"
+        style="background-image: url('https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?q=80&w=2649&auto=format&fit=crop');">
+        <div class="sub-hero-content">
+            <h1>Reserve Your Stay</h1>
+            <p>特別なひとときを、ここから</p>
+        </div>
+    </section>
+
+    <!-- Reservation Form -->
+    <main class="content-section">
+        <div class="container fade-up">
+
+            <form class="form-container">
+
+                <div class="form-group">
+                    <label for="check-in" class="form-label">Check-in</label>
+                    <input type="date" id="check-in" class="form-input">
+                </div>
+
+                <div class="form-group">
+                    <label for="check-out" class="form-label">Check-out</label>
+                    <input type="date" id="check-out" class="form-input">
+                </div>
+
+                <div class="form-group">
+                    <label for="room-type" class="form-label">Room Type</label>
+                    <select id="room-type" class="form-select">
+                        <option value="">部屋タイプを選択</option>
+                        <option value="suite">スイートルーム</option>
+                        <option value="deluxe">デラックスルーム</option>
+                        <option value="standard">スタンダードルーム</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="guests" class="form-label">Guests</label>
+                    <select id="guests" class="form-select">
+                        <option value="1">大人1名</option>
+                        <option value="2" selected>大人2名</option>
+                        <option value="3">大人3名</option>
+                    </select>
+                </div>
+
+                <div class="form-submit">
+                    <button type="submit" class="btn-submit"
+                        onclick="event.preventDefault(); alert('Reservation demo: Check availability clicked.');">Check
+                        Availability</button>
+                </div>
+
+            </form>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container fade-up">
+            <div class="logo">SERENITY STAY</div>
+            <div class="footer-links">
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+            </div>
+            <p class="copyright">&copy; 2026 Serenity Stay. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
