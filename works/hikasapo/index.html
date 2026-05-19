@@ -175,6 +175,155 @@ body {
 }
 
 /* ============ FLOATING CTA (追従) ============ */
+
+/* CTA共通 */
+.floating-cta{
+position:fixed;
+bottom:24px;
+left:24px;
+right:24px;
+z-index:999;
+pointer-events:none;
+}
+
+.cta-box{
+position:fixed;
+pointer-events:auto;
+font-size:14px;
+font-weight:600;
+border-radius:8px;
+padding:12px 18px;
+background:#fff;
+border:2px solid;
+box-shadow:0 8px 24px rgba(0,0,0,0.18);
+transition:all .2s;
+}
+
+.cta-box:hover{
+transform:translateY(-2px);
+box-shadow:0 10px 30px rgba(0,0,0,0.25);
+}
+
+.cta-box a{
+text-decoration:none;
+display:block;
+}
+
+.cta-line{
+right: 90px;
+bottom: 24px;
+padding: 20px 56px;
+border-radius: 5px;
+display: flex;
+align-items: center;
+justify-content: center;
+background: #06C755;
+border: 3px solid #06C755;
+color: #ffffff;
+}
+
+.cta-line a{
+color:#ffffff;
+font-size:13px;
+font-weight:700;
+text-align:center;
+}
+
+.cta-faq{
+left:24px;
+bottom:140px;
+padding: 20px 56px;
+background:#f6ac28;
+border-color:#f6ac28;
+color: #ffffff;
+}
+
+.cta-contact{
+left:24px;
+bottom:60px;
+padding: 20px 56px;
+background:#10264c;
+border-color:#10264c;
+color: #ffffff;
+}
+
+.cta-contact a{}
+
+.cta-close{
+position: absolute;
+top: -14px;
+right: -18px;
+width: 32px;
+height: 32px;
+border-radius: 50%;
+border: 1px solid #bababa;
+background: #ffffff;
+color: #bababa;
+font-size: 12px;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+/* TOPへ戻るボタン */
+.cta-top{
+position:fixed;
+
+right:10px; /* LINEの左に配置 */
+bottom:24px;
+
+width:64px;
+height:64px;
+
+border-radius:50%;
+
+background:#ffffff;
+border:3px solid #000;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-size:12px;
+font-weight:700;
+color:#000;
+
+box-shadow:0 8px 24px rgba(0,0,0,0.18);
+
+cursor:pointer;
+transition:all .2s;
+}
+
+.cta-top:hover{
+transform:translateY(-2px);
+box-shadow:0 10px 30px rgba(0,0,0,0.25);
+}
+
+@media (max-width:768px){
+
+/* FAQ非表示 */
+.cta-faq{
+display:none;
+}
+
+/* CONTACT中央 */
+.cta-contact{
+left:16px;
+right:16px;
+bottom:16px;
+text-align:center;
+}
+
+/* LINE少し上 */
+.cta-line{
+right:16px;
+bottom:88px;
+}
+
+}
+
+/*
 .sticky-cta {
   position: fixed;
   bottom: 0; left: 0; right: 0;
@@ -206,6 +355,7 @@ body {
 .sticky-cta a.line:hover { background: #04b34c; }
 .sticky-cta a.form { background: var(--blue); }
 .sticky-cta a.form:hover { background: #1a5cb0; }
+*/
 
 /* ============================================================
    HEADER — ネイビーグラデ × 縦区切り × 2CTAボタン
@@ -423,6 +573,7 @@ nav a:hover {
   background: rgba(8, 14, 28, 0.52);
 }
 /* 装飾グロー */
+/*
 .hero::before {
   content: '';
   position: absolute; top: -20%; right: -10%;
@@ -431,15 +582,17 @@ nav a:hover {
   border-radius: 0;
   z-index: 2;
 }
+*/
 /* 下辺斜めカット */
+/*
 .hero::after {
   content: '';
   position: absolute; bottom: 0; left: 0; right: 0;
   height: 60px;
-  background: #f5f6f8;
   clip-path: polygon(0 100%, 100% 100%, 100% 0);
   z-index: 5;
 }
+*/
 
 /* ── 2カラムレイアウト ── */
 .hero-inner {
@@ -498,27 +651,27 @@ nav a:hover {
 .hero-medal__wreath::after {
   content: '';
   position: absolute;
-  top: 50%; transform: translateY(-50%);
-  width: 16px; height: 28px;
+  top: 0%; transform: translateY(-22%);
+  width: 70px; height: 104px;
   background-image: url("common/img/gold-feather-left.png");
   background-size: contain;
   background-repeat: no-repeat;
 }
-.hero-medal__wreath::before { left: 0; transform: translateY(-50%) scaleX(1); }
-.hero-medal__wreath::after  { right: 0; transform: translateY(-50%) scaleX(-1); }
+.hero-medal__wreath::before { left: -18px; transform: translateY(-24%) scaleX(1); }
+.hero-medal__wreath::after  { right: -18px; transform: translateY(-24%) scaleX(-1); }
 .hero-medal__num {
   font-family: 'Oswald', sans-serif;
-  font-size: 28px; font-weight: 700;
+  font-size: 38px; font-weight: 700;
   color: var(--accent); line-height: 1;
   white-space: nowrap;
 }
 .hero-medal__num small { font-size: 16px; font-weight: 600; }
 .hero-medal__label {
-  font-size: 10px; color: rgba(255,255,255,0.65);
-  line-height: 1.5; margin-top: 3px; white-space: nowrap;
+  font-size: 14px; color: rgba(255,255,255,0.65);
+  line-height: 1.5; margin-top: 0; white-space: nowrap;
 }
 .hero-medal__sublabel {
-  font-size: 9px; color: rgba(255,255,255,0.4);
+  font-size:12px; color: rgba(255,255,255,0.4);
   margin-top: 1px;
 }
 
@@ -682,40 +835,45 @@ nav a:hover {
 section { padding: 96px 24px; position: relative; }
 .section-inner { max-width: 1140px; margin: 0 auto; position: relative; z-index: 1; }
 .section-label {
-  font-size: 18px; font-weight: 700; color: var(--accent);
+  font-size: 24px; font-weight: 700; color: var(--accent);
   letter-spacing: 3px; text-transform: uppercase;
   margin-bottom: 10px; text-align: center;
 }
 .section-title {
-  font-size: clamp(22px, 3vw, 40px); font-weight: 600;
-  color: var(--navy); text-align: center; margin-bottom: 52px; line-height: 1.4;
+  font-size: clamp(22px, 3vw, 40px);
+  font-weight: 600;
+  color: var(--navy);
+  text-align: center;
+  margin-bottom: 52px;
+  line-height: 1.4;
 }
 .section-title span { color: var(--accent); }
 
-/* ============ ③ 斜めセクション — clip-path / skew 交互設計 ============ */
-/*
-  設計思想：
-  - 白背景セクションはclip-pathで下辺を斜め（右下がり）
-  - 紺背景セクションは逆方向（左下がり）で交互リズム
-  - 可読性を守るため padding-bottom を多めに確保
-  - ::after擬似要素で「次の背景色を食い込ませる」手法で
-    clipによる余白の視覚的ギャップを補正
-*/
-
-/* pain → reasons の境界：グレー → 紺 */
 .pain-section {
   background: #f5f6f8;
   padding-bottom: 120px;
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 56px), 0 100%);
+  /*clip-path: polygon(0 0, 100% 0, 100% calc(100% - 56px), 0 100%);*/
 }
-
-/* ============ PAIN BLOCKS — 3×2 フラットパネルグリッド ============
-   設計方針：
-   - gap ゼロ + border で「パネル分割」を表現。角丸は一切なし
-   - ホバーは背景をごく微量に濃くするだけ（シャドウ/transform 禁止）
-   - アクセントはトップのスライドライン1本に集約し、品格を保つ
-   - アイコンは角丸なし・菱形ではなく正方形の細ボーダーで囲う
-   ================================================================ */
+/*
+.pain-section::before {
+  content: '';
+  position: absolute;
+  top: 40px; right: 60px;
+  width: 180px; height: 180px;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.35) 1.5px, transparent 1.5px);
+  background-size: 16px 16px;
+  pointer-events: none;
+}
+.pain-section::after {
+  content: '';
+  position: absolute;
+  bottom: 60px; left: 48px;
+  width: 130px; height: 130px;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.25) 1.5px, transparent 1.5px);
+  background-size: 14px 14px;
+  pointer-events: none;
+}
+*/
 .pain-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -772,8 +930,8 @@ section { padding: 96px 24px; position: relative; }
 }
 /* タイトル */
 .pn__title {
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 500;
   color: var(--navy);
   line-height: 1.65;
   margin-bottom: 14px;
@@ -794,6 +952,215 @@ section { padding: 96px 24px; position: relative; }
   .pain-grid { grid-template-columns: 1fr; }
   .pain-panel { padding: 32px 24px 28px; }
 }
+
+/* ============================================================
+   PRODUCTS — 製品カルーセルセクション
+   プレフィックス: prd-（他セクションと完全分離）
+   背景：黄色系（#F5C400 ベース）
+   ============================================================ */
+.prd-section {
+  background: #F5C400;
+  padding: 104px 0 100px;
+  /*clip-path: polygon(0 56px, 100% 0, 100% calc(100% - 56px), 0 100%);*/
+  margin-top: -56px;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+/*
+.prd-section::before {
+  content: '';
+  position: absolute;
+  top: 40px; right: 60px;
+  width: 180px; height: 180px;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.35) 1.5px, transparent 1.5px);
+  background-size: 16px 16px;
+  pointer-events: none;
+}
+.prd-section::after {
+  content: '';
+  position: absolute;
+  bottom: 60px; left: 48px;
+  width: 130px; height: 130px;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.25) 1.5px, transparent 1.5px);
+  background-size: 14px 14px;
+  pointer-events: none;
+}
+*/
+.prd-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 48px;
+  position: relative;
+  z-index: 1;
+}
+.prd-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 36px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.prd-header__left {}
+.prd-header__label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(10,22,40,0.5);
+  margin-bottom: 6px;
+}
+.prd-header__title {
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: 900;
+  color: var(--navy);
+  line-height: 1.2;
+  margin: 0;
+}
+.prd-header__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+  text-decoration: none;
+  border-bottom: 2px solid var(--navy);
+  padding-bottom: 2px;
+  white-space: nowrap;
+  transition: opacity 0.18s;
+}
+.prd-header__link:hover { opacity: 0.55; }
+
+/* カルーセルラッパー */
+.prd-carousel { position: relative; }
+.prd-track-wrap { overflow: hidden; }
+.prd-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.42s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+/* カード */
+.prd-card {
+  flex: 0 0 calc((100% - 48px) / 3);
+  min-width: 0;
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 28px rgba(10,22,40,0.13);
+  transition: transform 0.22s, box-shadow 0.22s;
+}
+.prd-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 40px rgba(10,22,40,0.18);
+}
+.prd-card__media {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, #dde3ec 0%, #c8d0da 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+/* カラー別アクセント帯 */
+.prd-card__media--net  { background: linear-gradient(135deg, #d4ecf7 0%, #a8d8f0 100%); }
+.prd-card__media--tel  { background: linear-gradient(135deg, #d7f0e8 0%, #a0d9c8 100%); }
+.prd-card__media--dev  { background: linear-gradient(135deg, #f0e8d4 0%, #e0cba0 100%); }
+.prd-card__media--sec  { background: linear-gradient(135deg, #e8d4f0 0%, #c8a0d9 100%); }
+.prd-card__media--pay  { background: linear-gradient(135deg, #f0d4d4 0%, #d9a0a0 100%); }
+
+.prd-card__play {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.9);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  transition: transform 0.2s;
+}
+.prd-card__play i { color: var(--navy); font-size: 18px; margin-left: 3px; }
+.prd-card:hover .prd-card__play { transform: scale(1.1); }
+
+.prd-card__body { padding: 25px 22px 34px }
+.prd-card__tag {
+  display: inline-block;
+  background: #f6ac28;
+  color: #ffffff;
+  font-size: 14px; font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+.prd-card__name {
+  font-size: 18px; font-weight: 700;
+  color: var(--navy);
+  margin: 14px 0; line-height: 1.4;
+}
+.prd-card__desc {
+  font-size: 12.5px; color: #6b7a95;
+  line-height: 1.7; margin: 0;
+}
+
+/* 矢印ボタン */
+.prd-btn {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--white);
+  border: none;
+  box-shadow: 0 4px 16px rgba(10,22,40,0.18);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 10;
+  color: var(--navy); font-size: 15px;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+}
+.prd-btn:hover { background: var(--navy); color: var(--white); }
+.prd-btn:disabled { opacity: 0.25; cursor: default; pointer-events: none; }
+.prd-btn--prev { left: -22px; }
+.prd-btn--next { right: -22px; }
+
+/* ドット */
+.prd-dots {
+  display: flex; justify-content: center; gap: 8px;
+  margin-top: 28px;
+}
+.prd-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: rgba(10,22,40,0.22);
+  border: none; cursor: pointer; padding: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+.prd-dot.is-active { background: var(--navy); transform: scale(1.35); }
+
+/* レスポンシブ */
+@media (max-width: 900px) {
+  .prd-section {
+    /*clip-path: polygon(0 32px, 100% 0, 100% calc(100% - 32px), 0 100%);*/
+    margin-top: -32px;
+    padding: 72px 0 80px;
+  }
+  .prd-inner { padding: 0 36px; }
+  .prd-card { flex: 0 0 calc((100% - 24px) / 2); }
+  .prd-btn--prev { left: -16px; }
+  .prd-btn--next { right: -16px; }
+}
+@media (max-width: 600px) {
+  .prd-section { /*clip-path: none; margin-top: 0; padding: 64px 0;*/ }
+  .prd-inner { padding: 0 20px; }
+  .prd-card { flex: 0 0 88vw; }
+  .prd-btn--prev { left: 2px; }
+  .prd-btn--next { right: 2px; }
+  .prd-header { flex-direction: column; align-items: flex-start; }
+}
+
 .reasons-section {
   background: var(--navy);
   padding-top: 112px;
@@ -803,13 +1170,176 @@ section { padding: 96px 24px; position: relative; }
 .reasons-section .section-title { color: var(--white); }
 .reasons-section .section-label { color: rgba(22,156,204,0.75); }
 
+/* ============================================================
+   NET BANNER — 「私たちのサービスで、快適なネット環境を」
+   プレフィックス: nb-（他セクションと完全分離）
+   ============================================================ */
+.nb-section {
+  position: relative;
+  background: linear-gradient(135deg, #071018 0%, #0c1e38 40%, #0f2d58 70%, #122f60 100%);
+  padding: 88px 0;
+  overflow: hidden;
+  /*clip-path: polygon(0 56px, 100% 0, 100% calc(100% - 56px), 0 100%);*/
+  margin-top: -56px;
+  margin-bottom: -56px;
+  z-index: 1;
+}
+
+/* 背景装飾：右上から差し込む光 */
+/*
+.nb-section::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(22,156,204,0.18) 0%, transparent 65%);
+  pointer-events: none;
+}
+/* 左下の光 */
+/*
+.nb-section::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  left: 10%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(22,156,204,0.10) 0%, transparent 65%);
+  pointer-events: none;
+}
+*/
+
+/* 内側コンテナ */
+.nb-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 40px 114px;
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── 左：イラストエリア ── */
+.nb-visual {
+  flex: 0 0 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SVGイラストのラッパー */
+.nb-visual__art {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 4 / 3;
+  position: relative;
+}
+
+/* ── 右：テキストエリア ── */
+.nb-text {
+  flex: 1;
+  min-width: 0;
+}
+
+/* サブラベル */
+.nb-text__eyebrow {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--accent-light);
+  margin-bottom: 18px;
+}
+
+/* メイン見出し */
+.nb-text__heading {
+  font-size: 46px;
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.45;
+  letter-spacing: 0.05em;
+  margin-bottom: 24px;
+}
+.nb-text__heading em {
+  font-style: normal;
+  color: #f6ac28;
+}
+
+/* 説明文 */
+.nb-text__body {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 1);
+  line-height: 1.9;
+  margin-bottom: 36px;
+  max-width: 480px;
+}
+
+/* CTAボタン */
+.nb-text__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--accent);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 14px 28px;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: background 0.2s;
+}
+.nb-text__cta:hover {
+  background: var(--accent-hover);
+}
+
+/* ── レスポンシブ ── */
+@media (max-width: 900px) {
+  .nb-section {
+    /*clip-path: polygon(0 32px, 100% 0, 100% calc(100% - 32px), 0 100%);*/
+    margin-top: -32px;
+    margin-bottom: -32px;
+    padding: 72px 0;
+  }
+  .nb-inner {
+    flex-direction: column;
+    gap: 40px;
+    padding: 32px 24px;
+  }
+  .nb-visual {
+    flex: none;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  .nb-text {
+    text-align: center;
+  }
+  .nb-text__body { max-width: 100%; }
+  .nb-text__cta { margin: 0 auto; }
+}
+
+@media (max-width: 600px) {
+  .nb-section {
+    clip-path: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 64px 0;
+  }
+  .nb-text__heading { font-size: 22px; }
+}
+
 /* packs */
 .packs-section {
   background: var(--gray-100);
   padding-top: 112px;
   padding-bottom: 120px;
   margin-top: -56px;
-  clip-path: polygon(0 56px, 100% 0, 100% 100%, 0 100%);
+  /*clip-path: polygon(0 56px, 100% 0, 100% 100%, 0 100%);*/
 }
 
 /* services */
@@ -817,7 +1347,7 @@ section { padding: 96px 24px; position: relative; }
   background: #ffffff;
   padding-top: 96px;
   padding-bottom: 120px;
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 56px), 0 100%);
+  /*clip-path: polygon(0 0, 100% 0, 100% calc(100% - 56px), 0 100%);*/
 }
 
 /* ============================================================
@@ -1056,18 +1586,18 @@ section { padding: 96px 24px; position: relative; }
 .flow-section {
   background: var(--gray-100);
   padding-top: 112px;
-  padding-bottom: 120px;
-  margin-top: -56px;
-  clip-path: polygon(0 56px, 100% 0, 100% calc(100% - 56px), 0 100%);
+  padding-bottom: 130px;
+  margin-top: 0;
+  /*clip-path: polygon(0 56px, 100% 0, 100% calc(100% - 56px), 0 100%);*/
 }
 
 /* cases */
 .cases-section {
   background: var(--navy);
   padding-top: 112px;
-  padding-bottom: 128px;
-  margin-top: -56px;
-  clip-path: polygon(0 56px, 100% 0, 100% 100%, 0 100%);
+  padding-bottom: 180px;
+  margin-top: 0;
+  /*clip-path: polygon(0 56px, 100% 0, 100% 100%, 0 100%);*/
 }
 .cases-section .section-title { color: var(--white); }
 .cases-section .section-label { color: rgba(22,156,204,0.75); }
@@ -1078,7 +1608,7 @@ section { padding: 96px 24px; position: relative; }
   padding-top: 100px;
   padding-bottom: 100px;
   margin-top: -56px;
-  clip-path: polygon(0 56px, 100% 0, 100% 100%, 0 100%);
+  /*clip-path: polygon(0 56px, 100% 0, 100% 100%, 0 100%);*/
 }
 
 /* ============ REASONS — 新デザイン（画像カード型）============
@@ -1099,6 +1629,7 @@ section { padding: 96px 24px; position: relative; }
 }
 
 /* セクション内背景グロー */
+/*
 .reasons-section::before {
   content: '';
   position: absolute; inset: 0; pointer-events: none; z-index: 0;
@@ -1106,6 +1637,7 @@ section { padding: 96px 24px; position: relative; }
     radial-gradient(ellipse 70% 50% at 80% 20%, rgba(22,156,204,0.05) 0%, transparent 60%),
     radial-gradient(ellipse 50% 40% at 10% 80%, rgba(22,156,204,0.04) 0%, transparent 60%);
 }
+*/
 
 /* --- カードグリッドコンテナ --- */
 .rs__grid {
@@ -1162,9 +1694,9 @@ section { padding: 96px 24px; position: relative; }
 /* 画像下部の斜めカット：テキストエリア同色の三角を重ねる */
 .rs__card__img::after {
   content: '';
-  position: absolute; bottom: -1px; left: 0; right: -1px; height: 56px;
+  position: absolute; bottom: -1px; left: 0; right: -1px; height: 0;
   background: var(--rs-card-bg, #0e1f3a);
-  clip-path: polygon(0 100%, 100% 100%, 100% 0);
+  /*clip-path: polygon(0 100%, 100% 100%, 100% 0);*/
 }
 
 /* --- テキストエリア --- */
@@ -1188,6 +1720,16 @@ section { padding: 96px 24px; position: relative; }
   width: 28px; height: 2px;
   background: var(--accent, #169ccc);
   margin: 10px 0 13px; position: relative; z-index: 1;
+}
+.rs__card__line2 {
+  width: 88px; height: 2px;
+  background: #179ccc;
+  margin: 10px 0 20px 43px; position: relative; z-index: 1;
+}
+.rs__card__line3 {
+  width: 108px; height: 8px;
+  background: #179ccc;
+  margin: 30px auto 0;
 }
 
 /* タイトル */
@@ -1304,7 +1846,6 @@ section { padding: 96px 24px; position: relative; }
 /* カード共通 */
 .pack-card {
   background: var(--white);
-  border: 2px solid var(--gray-200);
   border-radius: 0;
   overflow: hidden;           /* ヘッダー帯がはみ出ないよう */
   position: relative;
@@ -1318,9 +1859,7 @@ section { padding: 96px 24px; position: relative; }
 
 /* 推奨（スタンダード）強調 */
 .pack-card.recommended {
-  border-color: #4dbaf4;
   border-width: 2px;
-  box-shadow: 0 8px 32px rgba(22,156,204,0.18);
   transform: translateY(-8px);
 }
 
@@ -1336,19 +1875,16 @@ section { padding: 96px 24px; position: relative; }
 .plns-card-header--start {
   background: #d4d8e2;
   color: #4a5568;
-  font-family: 'Playfair Display', serif;
   font-weight: 400;
 }
 .plns-card-header--standard {
   background: linear-gradient(135deg, #4ebef4 0%, #4f80f5 100%);
   color: #ffffff;
-  font-family: 'Playfair Display', serif;
   font-weight: 400;
 }
 .plns-card-header--premium {
   background: linear-gradient(135deg, #d7c594 0%, #b7a574 100%);
   color: #ffffff;
-  font-family: 'Playfair Display', serif;
   font-weight: 400;
 }
 
@@ -1363,12 +1899,12 @@ section { padding: 96px 24px; position: relative; }
 /* プラン名 */
 .plns-card-body h3 {
   font-size: clamp(22px, 2.5vw, 28px);
-  font-weight: 700;
+  font-weight: 400;
   color: var(--navy);
   text-align: center;
   margin-bottom: 6px;
   line-height: 1.3;
-  font-family: 'Playfair Display', serif;
+  background: linear-gradient(transparent 70%, #fff176 60%);
 }
 
 /* 対象説明 */
@@ -1451,8 +1987,7 @@ section { padding: 96px 24px; position: relative; }
   background: var(--gray-200);
   color: var(--navy);
   border: none;
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
+  font-weight: 400;
 }
 .pack-cta:hover { filter: brightness(0.94); }
 
@@ -1704,186 +2239,574 @@ section { padding: 96px 24px; position: relative; }
 }
 
 /* ============ FINAL CTA ============ */
+/* ============================================================
+   FINAL CTA — デザイン画像準拠
+   3等幅横並びボタン（電話 / LINE / 見積フォーム）
+   ============================================================ */
 .final-cta {
-  background: linear-gradient(135deg, var(--navy) 0%, #0d2d5e 100%);
-  padding: 88px 24px; text-align: center;
-  position: relative; overflow: hidden;
+  background: linear-gradient(180deg, #0d1e38 0%, #081020 100%);
+  padding: 88px 0 80px;
+  text-align: center;
+  position: relative;
 }
-.final-cta::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+.final-cta-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
-.final-cta-inner { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; }
 .final-cta h2 {
-  font-size: clamp(22px, 3.5vw, 36px); font-weight: 900;
-  color: var(--white); margin-bottom: 12px; line-height: 1.4;
+  font-size: clamp(24px, 3.5vw, 40px);
+  font-weight: 900;
+  color: var(--white);
+  margin-bottom: 12px;
+  line-height: 1.4;
 }
 .final-cta h2 span { color: var(--accent); }
-.final-cta > div > p {
-  font-size: 15px; color: rgba(255,255,255,0.65); margin-bottom: 36px; line-height: 1.7;
+.final-cta-lead {
+  font-size: 15px;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 52px;
+  line-height: 1.8;
 }
-.cta-buttons {
-  display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px;
-}
-.cta-btn-tel {
-  display: flex; flex-direction: column; align-items: center;
-  background: var(--accent-grd); color: var(--white);
-  padding: 16px 28px; border-radius: 0; text-decoration: none; font-weight: 700;
-  transition: background 0.25s, transform 0.2s, box-shadow 0.25s; min-width: 180px;
-}
-.cta-btn-tel:hover {
-  background: var(--accent-grd-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(22,156,204,0.4);
-}
-.cta-btn-tel .tel-num {
-  font-family: 'Oswald', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: 1px;
-}
-.cta-btn-tel .tel-sub { font-size: 11px; opacity: 0.8; margin-top: 2px; }
-.cta-btn-line {
-  display: flex; align-items: center; justify-content: center; gap: 10px;
-  background: var(--line-green); color: var(--white);
-  padding: 16px 28px; border-radius: 0; text-decoration: none;
-  font-weight: 700; font-size: 15px; min-width: 180px;
-  transition: background 0.25s, transform 0.2s;
-}
-.cta-btn-line:hover { background: #04b34c; transform: translateY(-2px); }
-.cta-btn-form {
-  display: flex; align-items: center; justify-content: center; gap: 10px;
-  background: transparent; color: var(--white);
-  padding: 16px 28px; border-radius: 0; text-decoration: none;
-  font-weight: 700; font-size: 15px;
-  border: 2px solid rgba(255,255,255,0.3); min-width: 180px;
-  transition: border-color 0.25s, background 0.25s, transform 0.2s;
-}
-.cta-btn-form:hover {
-  border-color: var(--accent-light);
-  background: rgba(22,156,204,0.08);
-  transform: translateY(-2px);
-}
-.cta-guarantee {
-  font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.8;
-}
-.cta-guarantee strong { color: rgba(255,255,255,0.8); }
 
-/* ============ FOOTER — 縦構成・リニューアル版 ============ */
-footer {
-  background: #070E1A;
-  padding: 88px 24px 64px;
-  color: rgba(255,255,255,0.5);
-}
-.footer-inner {
-  max-width: 860px;
-  margin: 0 auto;
-  text-align: center;
-}
-.footer-logo-img {
-  display: block;
-  height: 44px;
-  width: auto;
-  margin: 0 auto 28px;
-}
-.footer-tagline {
-  font-size: 14px;
-  color: rgba(255,255,255,0.75);
-  line-height: 2;
+/* ── 3等幅グリッドCTA ── */
+.fcta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   margin-bottom: 40px;
-  letter-spacing: 0.03em;
+  /* デザイン画像通り：ボタン間に1px境界線 */
+  border: 1px solid rgba(255,255,255,0.15);
 }
-/* CTAボタン群 */
-.footer-cta {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0;
-  margin-bottom: 36px;
-}
-.footer-cta-btn {
+
+.fcta-btn {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
-  padding: 18px 32px;
+  justify-content: center;
+  gap: 8px;
+  padding: 36px 24px;
   text-decoration: none;
-  transition: background 0.2s;
+  transition: filter 0.18s;
+  border-right: 1px solid rgba(255,255,255,0.15);
 }
-.footer-cta-btn--tel {
-  background: var(--accent-grd);
-  color: var(--white);
+.fcta-btn:last-child { border-right: none; }
+.fcta-btn:hover { filter: brightness(1.08); }
+
+/* 電話 — 青系グラデーション */
+.fcta-btn--tel {
+  background: linear-gradient(135deg, #1cb8ec 0%, #0e8ec0 100%);
+  color: #fff;
 }
-.footer-cta-btn--tel:hover { background: var(--accent-grd-hover); }
-.footer-cta-btn--tel .fcta-main {
-  font-family: 'Oswald', sans-serif;
-  font-size: 22px; font-weight: 700; letter-spacing: 1px;
+.fcta-btn--tel .fcta-main {
+  font-family: 'Oswald', 'Barlow Condensed', sans-serif;
+  font-size: clamp(28px, 3.8vw, 42px);
+  font-weight: 700;
+  letter-spacing: 2px;
   line-height: 1;
 }
-.footer-cta-btn--tel .fcta-sub { font-size: 11px; opacity: 0.8; }
-.footer-cta-btn--line {
+
+/* LINE — グリーン */
+.fcta-btn--line {
   background: #06C755;
-  color: var(--white);
+  color: #fff;
 }
-.footer-cta-btn--line:hover { background: #04b34c; }
-.footer-cta-btn--line .fcta-main { font-size: 14px; font-weight: 700; }
-.footer-cta-btn--line .fcta-sub { font-size: 11px; opacity: 0.8; }
-.footer-cta-btn--form {
-  background: rgba(255,255,255,0.07);
-  color: rgba(255,255,255,0.85);
-  border: 1px solid rgba(255,255,255,0.18);
-}
-.footer-cta-btn--form:hover { background: rgba(255,255,255,0.12); }
-.footer-cta-btn--form .fcta-main { font-size: 14px; font-weight: 700; }
-.footer-cta-btn--form .fcta-sub { font-size: 11px; opacity: 0.7; }
-/* セパレータ */
-.footer-cta-sep {
-  color: rgba(255,255,255,0.2);
-  font-size: 18px;
-  padding: 0 2px;
+.fcta-btn--line .fcta-main {
+  font-size: clamp(18px, 2.2vw, 24px);
+  font-weight: 900;
   line-height: 1;
-  align-self: center;
 }
-/* 安心メモ */
-.footer-note {
+
+/* 見積フォーム — ネイビー枠線 */
+.fcta-btn--form {
+  background: transparent;
+  color: #fff;
+}
+.fcta-btn--form:hover {
+  background: rgba(255,255,255,0.05);
+  filter: none;
+}
+.fcta-btn--form .fcta-main {
+  font-size: clamp(18px, 2.2vw, 24px);
+  font-weight: 900;
+  line-height: 1;
+}
+
+/* サブテキスト共通 */
+.fcta-sub {
   font-size: 12px;
-  color: rgba(255,255,255,0.45);
-  line-height: 1.9;
+  opacity: 0.82;
+  letter-spacing: 0.02em;
+}
+
+/* 保証テキスト */
+.cta-guarantee {
+  font-size: 14px;
+  color: rgba(255,255,255,0.48);
+  line-height: 2;
+}
+.cta-guarantee strong { color: rgba(255,255,255,0.8); }
+
+/* ============================================================
+   COMPANY OVERVIEW — 会社概要セクション
+   プレフィックス: co-（他セクションと完全分離）
+   背景：水色系グラデーション
+   ============================================================ */
+.co-section {
+  background: linear-gradient(160deg, #e8f7fc 0%, #d4eff8 40%, #c2e8f4 100%);
+  padding: 96px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 背景装飾：大きな円（右上） */
+.co-section::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -100px;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: rgba(22, 156, 204, 0.07);
+  pointer-events: none;
+}
+/* 背景装飾：小さな円（左下） */
+.co-section::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: -60px;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: rgba(22, 156, 204, 0.05);
+  pointer-events: none;
+}
+
+/* 内側コンテナ */
+.co-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── セクションヘッダー ── */
+.co-eyebrow {
+  text-align: center;
   margin-bottom: 48px;
 }
-/* 区切り */
-.footer-divider {
-  border: none;
-  border-top: 1px solid rgba(255,255,255,0.07);
-  margin: 0 0 28px;
+.co-eyebrow__label {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
 }
-/* 下段：会社情報＋リンク */
-.footer-meta {
+.co-eyebrow__title {
+  font-size: clamp(22px, 3vw, 40px);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.3;
+  margin: 0 0 8px;
+}
+.co-eyebrow__sub {
+  font-size: 14px;
+  color: rgba(10, 22, 40, 0.55);
+  margin-top: .8em;
+}
+
+/* ── メインカード ── */
+.co-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 6px;
+  box-shadow:
+    0 4px 24px rgba(22, 156, 204, 0.10),
+    0 1px 4px rgba(10, 22, 40, 0.06);
+  overflow: hidden;
+}
+
+/* カード本体：テーブルリスト */
+.co-table {
+  padding: 28px 0;
+}
+.co-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  align-items: baseline;
+  gap: 0 24px;
+  padding: 18px 40px;
+  border-bottom: 1px solid rgba(22, 156, 204, 0.10);
+  transition: background 0.15s;
+}
+.co-row:last-child { border-bottom: none; }
+
+.co-row__label {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding-top: 2px;
+}
+.co-row__value {
+  font-size: 16px;
+  color: var(--navy);
+  line-height: 1.75;
+}
+
+/* 事業内容：箇条書き */
+.co-biz-list {
+  list-style: none;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+}
+.co-biz-list li {
+  display: flex;
   align-items: flex-start;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--navy);
+  line-height: 1.6;
+}
+.co-biz-list li::before {
+  content: '';
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-top: 7px;
+}
+
+/* ── 下部装飾（波線 + ドット散らばり） ── */
+.co-deco {
+  position: relative;
+  height: 80px;
+  margin-top: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  overflow: visible;
+}
+.co-deco__wave {
+  width: 100%;
+  max-width: 640px;
+  opacity: 0.35;
+}
+.co-deco__dot {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.25;
+}
+.co-deco__dot--a { width: 48px; height: 48px; top: 10px;  left: 8%;  opacity: 0.12; }
+.co-deco__dot--b { width: 20px; height: 20px; top: 30px;  left: 22%; opacity: 0.18; }
+.co-deco__dot--c { width: 32px; height: 32px; bottom: 4px; right: 18%; opacity: 0.13; }
+.co-deco__dot--d { width: 14px; height: 14px; bottom: 14px; right: 8%; opacity: 0.22; }
+.co-deco__dot--e { width: 10px; height: 10px; top: 8px;   right: 32%; opacity: 0.20; }
+
+/* ── レスポンシブ ── */
+@media (max-width: 700px) {
+  .co-section { padding: 72px 0 80px; }
+  .co-card__header { padding: 18px 24px; }
+  .co-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 16px 24px;
+  }
+  .co-row__label { font-size: 11px; margin-bottom: 2px; }
+  .co-row__value { font-size: 13.5px; }
+}
+
+/* ============================================================
+   CTA NAV — オレンジ帯 3ボタン（サービス案内 / 開通後サポート / コンテンツ一覧）
+   プレフィックス: cnav-（他と完全分離）
+   ============================================================ */
+.cnav-section {
+  background: linear-gradient(135deg, #ff5739 0%, #ff9b45 50%, #ffd350 100%);
+  padding: 52px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 背景：右上の光彩 */
+.cnav-section::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+}
+/* 背景：左下のドット */
+.cnav-section::after {
+  content: '';
+  position: absolute;
+  bottom: -40px; left: 10%;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+/* コンテナ */
+.cnav-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  position: relative;
+  z-index: 1;
   flex-wrap: wrap;
-  gap: 20px;
-  text-align: left;
 }
-.footer-info { font-size: 11.5px; line-height: 1.9; color: rgba(255,255,255,0.35); }
-.footer-links { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
-.footer-links a {
-  font-size: 11.5px; color: rgba(255,255,255,0.35); text-decoration: none;
-  transition: color 0.2s;
+
+/* ── ボタン共通 ── */
+.cnav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 70px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  font-family: 'Noto Sans JP', sans-serif;
+  min-width: 200px;
+  justify-content: center;
 }
-.footer-links a:hover { color: rgba(255,255,255,0.75); }
-.footer-copy {
-  margin-top: 24px;
+.cnav-btn:hover {
+  transform: translateY(-4px);
+}
+.cnav-btn i {
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+/* ボタン① サービス案内 — 白地・オレンジ文字 */
+.cnav-btn--service {
+  background: #ffffff;
+  color: #f6ac28;
+  border: 2px solid #f6ac28;
+}
+.cnav-btn--service:hover {
+  background: #f6ac28;
+  color: #ffffff;
+}
+
+/* ボタン② 開通後サポート — 半透明白枠 */
+.cnav-btn--support {
+  background: #ffffff;
+  color: #0074d7;
+  border: 2px solid #0074d7;
+}
+.cnav-btn--support:hover {
+  background: #0074d7;
+  color: #ffffff;
+  border: 2px solid #0074d7;
+}
+
+/* ボタン③ 全てのコンテンツ — 濃いオレンジ */
+.cnav-btn--all {
+  background: #ffffff;
+  color: #ea580c;
+  border: 2px solid #ea580c;
+}
+.cnav-btn--all:hover {
+  background: #ea580c;
+  color: #ffffff;
+}
+
+/* ── レスポンシブ ── */
+@media (max-width: 700px) {
+  .cnav-section { padding: 44px 24px; }
+  .cnav-inner {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .cnav-btn {
+    width: 100%;
+    max-width: 360px;
+    min-width: unset;
+  }
+}
+
+/* ============================================================
+   FOOTER — デザイン画像準拠
+   上：ロゴ＋住所（左）＋ 3列ナビ（右）
+   下：横ライン ＋ コピーライト
+   ============================================================ */
+footer {
+  background: #070d17;
+  color: rgba(255,255,255,0.4);
+}
+
+/* ── フッター本体コンテナ ── */
+.footer-body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 48px 56px;
+  display: flex;
+  align-items: flex-start;
+  gap: 80px;
+}
+
+/* 左：会社情報（固定幅） */
+.footer-company {
+  flex: 0 0 340px;   /* 左カラムを固定幅に */
+  min-width: 0;
+}
+
+.footer-logo-img {
+  display: block;
+  height: 56px;
+  width: auto;
+  margin-bottom: 24px;
+}
+
+.footer-address {
+  font-size: 12.5px;
+  line-height: 2;
+  color: rgba(255,255,255,0.4);
+}
+
+/* 右：ナビ3列（残り幅を使い切る） */
+.footer-nav {
+  flex: 1;
+  display: flex;
+  gap: 0 40px;
+  align-items: flex-start;
+  padding-top: 4px;
+  justify-content: flex-start;   /* 左詰め＝センタリングしない */
+}
+
+/* ナビ列共通 */
+.footer-nav-col {
+  min-width: 0;
+}
+
+.footer-nav-col h4 {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.72);
+  margin-bottom: 16px;
+  letter-spacing: 0.02em;
+  /* デザイン画像通り：見出し下に薄いライン */
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.09);
+}
+
+.footer-nav-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  margin-top: 14px;
+}
+
+.footer-nav-col ul li a {
+  font-size: 13px;
+  color: rgba(255,255,255,0.42);
+  text-decoration: none;
+  transition: color 0.18s;
+  white-space: nowrap;
+}
+.footer-nav-col ul li a:hover { color: rgba(255,255,255,0.85); }
+
+/* ── コピーライトエリア ── */
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+.footer-bottom-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 22px 48px;
   text-align: center;
-  font-size: 11px;
-  color: rgba(255,255,255,0.2);
 }
-@media (max-width: 640px) {
-  .footer-cta { flex-direction: column; gap: 2px; }
-  .footer-cta-sep { display: none; }
-  .footer-cta-btn { width: 100%; max-width: 360px; }
-  .footer-meta { flex-direction: column; text-align: center; }
-  .footer-links { justify-content: center; }
+.footer-copy {
+  font-size: 12px;
+  color: rgba(255,255,255,0.22);
+}
+
+/* ── レスポンシブ ── */
+@media (max-width: 1024px) {
+  .footer-body {
+    gap: 48px;
+    padding: 56px 32px 48px;
+  }
+  .footer-company { flex: 0 0 280px; }
+  .footer-nav { gap: 0 48px; }
+}
+
+@media (max-width: 900px) {
+  /* CTAグリッド → 縦並び */
+  .fcta-grid {
+    grid-template-columns: 1fr;
+    border: none;
+    gap: 2px;
+  }
+  .fcta-btn {
+    border-right: none;
+    padding: 24px 20px;
+  }
+  .fcta-btn--form {
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+
+  /* フッター本体 → 縦積み */
+  .footer-body {
+    flex-direction: column;
+    gap: 40px;
+    padding: 48px 24px 40px;
+    text-align: center;
+    align-items: center;
+  }
+  .footer-company {
+    flex: none;
+    width: 100%;
+  }
+  .footer-logo-img { margin: 0 auto 20px; }
+  .footer-address { text-align: center; }
+
+  /* ナビ → 2列グリッド */
+  .footer-nav {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 24px;
+    justify-content: center;
+  }
+  .footer-nav-col h4 { text-align: left; }
+  .footer-nav-col ul li a { white-space: normal; }
+}
+
+@media (max-width: 600px) {
+  .final-cta { padding: 64px 0 60px; }
+  .fcta-btn--tel .fcta-main { font-size: 28px; }
+  .footer-nav {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .footer-bottom-inner { padding: 22px 24px; }
 }
 
 /* ============ ④ Scroll Fade-in ============ */
@@ -1915,13 +2838,13 @@ footer {
   .pack-card.recommended { transform: none; order: -1; }
   nav { display: none; }
   /* スマホでclip-path斜め量を小さく（余白が大きすぎるのを防ぐ） */
-  .pain-section    { clip-path: polygon(0 0, 100% 0, 100% calc(100% - 32px), 0 100%); padding-bottom: 80px; }
-  .reasons-section { clip-path: polygon(0 0, 100% 32px, 100% 100%, 0 calc(100% - 32px)); margin-top: -32px; padding-top: 80px; padding-bottom: 88px; }
-  .packs-section   { clip-path: polygon(0 32px, 100% 0, 100% 100%, 0 100%); margin-top: -32px; padding-top: 80px; }
-  .services-section{ clip-path: polygon(0 0, 100% 0, 100% calc(100% - 32px), 0 100%); padding-bottom: 80px; }
-  .flow-section    { clip-path: polygon(0 32px, 100% 0, 100% calc(100% - 32px), 0 100%); margin-top: -32px; padding-top: 80px; padding-bottom: 80px; }
-  .cases-section   { clip-path: polygon(0 0, 100% 32px, 100% 100%, 0 calc(100% - 32px)); margin-top: -32px; padding-top: 80px; padding-bottom: 88px; }
-  .faq-section     { clip-path: polygon(0 32px, 100% 0, 100% 100%, 0 100%); margin-top: -32px; padding-top: 80px; }
+  .pain-section    { /*clip-path: polygon(0 0, 100% 0, 100% calc(100% - 32px), 0 100%);*/ padding-bottom: 80px; }
+  .reasons-section { /*clip-path: polygon(0 0, 100% 32px, 100% 100%, 0 calc(100% - 32px));*/ margin-top: -32px; padding-top: 80px; padding-bottom: 88px; }
+  .packs-section   { /*clip-path: polygon(0 32px, 100% 0, 100% 100%, 0 100%);*/ margin-top: -32px; padding-top: 80px; }
+  .services-section{ /*clip-path: polygon(0 0, 100% 0, 100% calc(100% - 32px), 0 100%);*/ padding-bottom: 80px; }
+  .flow-section    { /*clip-path: polygon(0 32px, 100% 0, 100% calc(100% - 32px), 0 100%);*/ margin-top: -32px; padding-top: 80px; padding-bottom: 80px; }
+  .cases-section   { /*clip-path: polygon(0 0, 100% 32px, 100% 100%, 0 calc(100% - 32px));*/ margin-top: -32px; padding-top: 80px; padding-bottom: 88px; }
+  .faq-section     { /*clip-path: polygon(0 32px, 100% 0, 100% 100%, 0 100%);*/ margin-top: -32px; padding-top: 80px; }
 }
 @media (max-width: 600px) {
   section { padding-left: 16px; padding-right: 16px; }
@@ -1991,7 +2914,7 @@ footer {
 .rs__card { border-radius: 0; }
 
 /* ─── rs__card の --rs-card-radius 変数も上書き ─── */
-.reasons-section { --rs-card-radius: 0px; clip-path: polygon(0 56px, 100% 0, 100% 100%, 0 100%); }
+.reasons-section { --rs-card-radius: 0px; /*clip-path: polygon(0 56px, 100% 0, 100% 100%, 0 100%);*/ }
 
 /* ─── flow-num → 正方形ナンバーへ ─── */
 .flow-num { border-radius: 0; }
@@ -2027,7 +2950,7 @@ footer {
 .flow-heading span { color: var(--accent); }
 .flow-header .section-label {
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 /* ── タイムライン外枠 ── */
@@ -2140,7 +3063,7 @@ footer {
   z-index: 1;
 }
 .flow-tl-img img {
-  width: 588px;
+  width: 686px;
 }
 
 /* ── テキストカード ── */
@@ -2203,10 +3126,10 @@ footer {
 .flow-tl-band {
   background: var(--navy);
   color: #ffffff;
-  font-size: 12.5px;
+  font-size: 14px;
   font-weight: 600;
   text-align: center;
-  padding: 12px 20px;
+  padding: 22px 20px;
   margin-top: 40px;
   letter-spacing: 0.04em;
   cursor: default;
@@ -2323,41 +3246,127 @@ footer {
 }
 
 /* ── セルフスクリーニング ── */
+/* ============================================================
+   PLANS — 事業規模セルフスクリーニング（吹き出し＋カード型）
+   ============================================================ */
+
+/* ラッパー */
 .plns-screen {
   text-align: center;
   margin-bottom: 40px;
-  padding: 28px 0 32px;
-  border-top: 1px solid var(--gray-200);
-  border-bottom: 1px solid var(--gray-200);
+  padding: 8px 0 0;
 }
-.plns-screen__label {
-  font-size: 42px;
-  color: var(--gray-500);
-  letter-spacing: 0.08em;
-  margin-bottom: 16px;
-  text-transform: uppercase;
-  font-family: 'Playfair Display', serif;
+
+/* ── 吹き出しラベル ── */
+.plns-screen__bubble {
+  display: inline-block;
+  background: #9aabca;               /* グレー寄りのブルーグレー */
+  color: #fff;
+  font-size: 18px;
   font-weight: 700;
-}
-.plns-screen__btns {
-  display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
-}
-.plns-screen__btn {
-  padding: 30px 48px 34px 48px; border-radius: 0;
-  border: 2px solid var(--gray-200); background: var(--white);
-  font-size: 22px; font-weight: 700; color: var(--navy);
-  cursor: pointer; display: flex; flex-direction: column;
-  align-items: center; gap: 3px;
-  transition: border-color 0.2s, background 0.2s;
+  letter-spacing: 0.06em;
+  padding: 12px 40px;
+  border-radius: 40px;
+  position: relative;
+  margin-bottom: 0;
   font-family: 'Noto Sans JP', sans-serif;
 }
-.plns-screen__btn:hover,
-.plns-screen__btn.is-active {
+/* 下向き三角ポインター */
+.plns-screen__bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 11px solid #9aabca;
+}
+
+/* ── 選択カードグリッド ── */
+.plns-screen__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 32px;
+}
+
+/* カード共通 */
+.plns-screen__card {
+  background: var(--white);
+  border: 1.5px solid #dde3ec;
+  padding: 32px 24px 28px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  text-align: left;
+  transition: box-shadow 0.22s, transform 0.22s, border-color 0.22s;
+  position: relative;
+  font-family: 'Noto Sans JP', sans-serif;
+  /* リセット */
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+}
+.plns-screen__card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+.plns-screen__card.is-active {
   border-color: var(--accent);
   background: var(--accent-ultra);
 }
-.plns-screen__scale {
-  font-size: 14px; font-weight: 400; color: var(--gray-500);
+
+/* 小さな規模ラベル（丸角バッジ） */
+.plns-card-scale {
+  display: inline-block;
+  margin: auto;
+  background: #eef1f7;
+  color: var(--gray-700);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+}
+
+/* カードタイトル */
+.plns-card-name {
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 900;
+  color: var(--navy);
+  line-height: 1.3;
+  margin: auto;
+}
+
+/* ── レスポンシブ ── */
+@media (max-width: 900px) {
+  .plns-screen__cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .plns-screen__card:last-child {
+    grid-column: 1 / -1;  /* 3枚目は2列幅で中央寄せ */
+    max-width: 50%;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .plns-screen__cards {
+    grid-template-columns: 1fr;
+  }
+  .plns-screen__card:last-child {
+    grid-column: auto;
+    max-width: 100%;
+  }
+  .plns-screen__bubble {
+    font-size: 14px;
+    padding: 10px 28px;
+  }
 }
 
 /* ── 迷っている方CTA帯 ── */
@@ -2371,17 +3380,20 @@ footer {
   flex-wrap: wrap;
 }
 .plns-undecided__heading {
-  font-size: 30px; font-family: 'Playfair Display', serif; font-weight: 700; color: var(--navy); margin-bottom: 6px;
+  font-size: 30px; font-family: 'Playfair Display', serif; font-weight: 700; color: var(--navy); margin-bottom: 6px;background: linear-gradient(transparent 80%, #fff176 60%);
 }
 .plns-undecided__body {
   font-size: 13px; color: var(--gray-700); line-height: 1.75;
 }
 .plns-undecided__cta {
   display: inline-flex; align-items: center;
-  padding: 14px 28px; border-radius: 0;
+  padding: 34px 58px;
+  border-radius: 0;
   background: var(--navy); color: var(--white);
-  font-size: 14px; font-weight: 700;
-  text-decoration: none; white-space: nowrap;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
   transition: background 0.2s;
   flex-shrink: 0;
 }
@@ -2393,8 +3405,8 @@ footer {
   background: var(--white-100);
   padding-top: 100px;
   padding-bottom: 100px;
-  margin-top: -56px;
-  clip-path: polygon(0 56px, 100% 0, 100% 100%, 0 100%);
+  margin-top: 0;
+  /*clip-path: polygon(0 56px, 100% 0, 100% 100%, 0 100%);*/
 }
 
 .contact__inner {
@@ -2418,9 +3430,9 @@ footer {
 
 .contact__tel-label {
   display: block;
-  font-size: 28px;
+  font-size: 20px;
   color: #666;
-  margin-bottom: 8px;
+  margin-bottom: 0;
 }
 
 .contact__tel-number {
@@ -2578,19 +3590,33 @@ footer {
 <body>
 
 <!-- ① 追従CTA — FA アイコン -->
-<div class="sticky-cta">
-  <a href="tel:0120059600" class="tel">
-    <i class="fa-regular fa-phone fa-icon"></i>
-    今すぐ電話
+<!-- Floating CTA -->
+<div class="floating-cta">
+
+  <!-- FAQ -->
+  <a href="#faq">
+    <div class="cta-box cta-faq">
+      <button class="cta-close">×</button>
+      よくあるご質問
+    </div>
   </a>
-  <a href="#" class="line">
-    <i class="fa-regular fa-comment-dots fa-icon"></i>
-    LINE相談
+
+  <!-- CONTACT -->
+  <a href="#contact">
+    <div class="cta-box cta-contact">
+      <button class="cta-close">×</button>
+      お問い合わせフォーム
+    </div>
   </a>
-  <a href="#contact" class="form">
-    <i class="fa-regular fa-envelope fa-icon"></i>
-    フォーム
+
+  <!-- LINE -->
+  <a href="#">
+    <div class="cta-box cta-line">
+      <button class="cta-close">×</button>
+      LINE相談
+    </div>
   </a>
+
 </div>
 
 <!-- ヘッダー -->
@@ -2686,43 +3712,43 @@ footer {
       <div class="hero-medals">
 
         <div class="hero-medal">
-          <div class="hero-medal__wreath">
-            <div class="hero-medal__num">1,200<small>社+</small></div>
-          </div>
           <div class="hero-medal__label">導入実績</div>
+          <div class="hero-medal__wreath">
+            <div class="hero-medal__num">30,000<small>社+</small></div>
+          </div>
           <div class="hero-medal__sublabel">以上</div>
         </div>
 
         <div class="hero-medal">
+          <div class="hero-medal__label">最短</div>
           <div class="hero-medal__wreath">
             <div class="hero-medal__num">翌日</div>
           </div>
-          <div class="hero-medal__label">最短</div>
           <div class="hero-medal__sublabel">対応</div>
         </div>
 
         <div class="hero-medal">
+          <div class="hero-medal__label">対応エリア</div>
           <div class="hero-medal__wreath">
             <div class="hero-medal__num">全国</div>
           </div>
-          <div class="hero-medal__label">対応エリア</div>
-          <div class="hero-medal__sublabel">（離島除く）</div>
+          <div class="hero-medal__sublabel">（離島もOK）</div>
         </div>
 
         <div class="hero-medal">
+          <div class="hero-medal__label">開通後サポート</div>
           <div class="hero-medal__wreath">
             <div class="hero-medal__num">無制限</div>
           </div>
-          <div class="hero-medal__label">開通後サポート</div>
-          <div class="hero-medal__sublabel">&nbsp;</div>
+          <div class="hero-medal__sublabel">いつでも相談OK</div>
         </div>
 
         <div class="hero-medal">
+          <div class="hero-medal__label">顧客満足度</div>
           <div class="hero-medal__wreath">
             <div class="hero-medal__num">98.2<small>%</small></div>
           </div>
-          <div class="hero-medal__label">顧客満足度</div>
-          <div class="hero-medal__sublabel">&nbsp;</div>
+          <div class="hero-medal__sublabel">リピート多数</div>
         </div>
 
       </div><!-- /hero-medals -->
@@ -2827,11 +3853,292 @@ footer {
   </div><!-- /hero-inner -->
 </section>
 
+<!-- ネット環境バナー帯 -->
+<section class="nb-section" id="net-banner" aria-label="私たちのサービスで、快適なネット環境を">
+  <div class="nb-inner">
+
+    <!-- 左：SVGイラスト -->
+    <div class="nb-visual">
+      <div class="nb-visual__art" aria-hidden="true">
+        <svg viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+          <!-- 背景：大きな円 -->
+          <circle cx="160" cy="120" r="110" fill="rgba(22,156,204,0.07)"/>
+          <circle cx="160" cy="120" r="78" fill="rgba(22,156,204,0.10)"/>
+
+          <!-- Wi-Fi電波シンボル（中央上） -->
+          <path d="M160 90 Q130 70 100 78" stroke="rgba(61,184,228,0.55)" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M160 90 Q130 60 90 70" stroke="rgba(61,184,228,0.35)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M160 90 Q190 70 220 78" stroke="rgba(61,184,228,0.55)" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M160 90 Q190 60 230 70" stroke="rgba(61,184,228,0.35)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+          <!-- 中央の接続ノード -->
+          <circle cx="160" cy="90" r="10" fill="var(--accent, #169ccc)" opacity="0.95"/>
+          <circle cx="160" cy="90" r="4" fill="#fff"/>
+
+          <!-- 接続ライン（中央→各デバイス） -->
+          <line x1="160" y1="100" x2="88" y2="152" stroke="rgba(61,184,228,0.45)" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <line x1="160" y1="100" x2="160" y2="160" stroke="rgba(61,184,228,0.45)" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <line x1="160" y1="100" x2="232" y2="152" stroke="rgba(61,184,228,0.45)" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+          <!-- 左：スマートフォン -->
+          <rect x="72" y="148" width="32" height="52" rx="5" fill="rgba(255,255,255,0.10)" stroke="rgba(61,184,228,0.6)" stroke-width="1.5"/>
+          <rect x="79" y="155" width="18" height="28" rx="2" fill="rgba(22,156,204,0.25)"/>
+          <circle cx="88" cy="191" r="3" fill="rgba(61,184,228,0.7)"/>
+
+          <!-- 中央：モニター -->
+          <rect x="136" y="155" width="48" height="34" rx="3" fill="rgba(255,255,255,0.10)" stroke="rgba(61,184,228,0.6)" stroke-width="1.5"/>
+          <rect x="141" y="160" width="38" height="22" rx="1" fill="rgba(22,156,204,0.2)"/>
+          <rect x="153" y="189" width="14" height="5" rx="1" fill="rgba(61,184,228,0.5)"/>
+          <rect x="148" y="194" width="24" height="2" rx="1" fill="rgba(61,184,228,0.4)"/>
+
+          <!-- 右：ノートPC -->
+          <rect x="215" y="150" width="38" height="26" rx="3" fill="rgba(255,255,255,0.10)" stroke="rgba(61,184,228,0.6)" stroke-width="1.5"/>
+          <rect x="219" y="154" width="30" height="17" rx="1" fill="rgba(22,156,204,0.2)"/>
+          <rect x="212" y="176" width="44" height="5" rx="2" fill="rgba(255,255,255,0.08)" stroke="rgba(61,184,228,0.4)" stroke-width="1"/>
+
+          <!-- 装飾：散らばる小さな光点 -->
+          <circle cx="60" cy="80" r="3" fill="rgba(61,184,228,0.5)"/>
+          <circle cx="265" cy="95" r="2.5" fill="rgba(61,184,228,0.4)"/>
+          <circle cx="100" cy="210" r="2" fill="rgba(61,184,228,0.35)"/>
+          <circle cx="230" cy="215" r="2.5" fill="rgba(61,184,228,0.4)"/>
+          <circle cx="45" cy="160" r="1.5" fill="rgba(255,255,255,0.2)"/>
+          <circle cx="280" cy="170" r="1.5" fill="rgba(255,255,255,0.2)"/>
+
+          <!-- チェックマーク（解決感） -->
+          <circle cx="160" cy="90" r="24" fill="none" stroke="rgba(61,184,228,0.2)" stroke-width="1" stroke-dasharray="3 3"/>
+          <circle cx="160" cy="90" r="38" fill="none" stroke="rgba(61,184,228,0.1)" stroke-width="1" stroke-dasharray="3 4"/>
+        </svg>
+      </div>
+    </div><!-- /nb-visual -->
+
+    <!-- 右：テキスト -->
+    <div class="nb-text">
+      <span class="nb-text__eyebrow">OUR SERVICE</span>
+      <h2 class="nb-text__heading">
+        私たちのサービスで、<br><em>快適</em>な<em>ネット環境</em>を
+      </h2>
+      <p class="nb-text__body">
+        光サポートは、インターネット回線を中心に、さまざまなソリューションを提供しています。
+        事業のビジネスニーズに応えるために日々より良いサービスの構築と適正を重ね入れています。
+        本業の快適なネットライフをサポートするために、常に進化し続けています。
+      </p>
+      <!--
+      <a href="#services" class="nb-text__cta">
+        サービス詳細を見る
+        <i class="fa-regular fa-arrow-right" aria-hidden="true"></i>
+      </a>
+      -->
+    </div><!-- /nb-text -->
+
+  </div><!-- /nb-inner -->
+</section>
+
+<!-- 製品カルーセル -->
+<section class="prd-section" id="products">
+  <div class="prd-inner">
+
+    <!-- ヘッダー -->
+    <div class="prd-header">
+      <div class="prd-header__left">
+        <p class="prd-header__label">PRODUCTS</p>
+        <h2 class="prd-header__title">製品</h2>
+      </div>
+      <a href="#services" class="prd-header__link">
+        すべて見る
+        <i class="fa-regular fa-arrow-right" aria-hidden="true"></i>
+      </a>
+    </div>
+
+    <!-- カルーセル -->
+    <div class="prd-carousel" id="prdCarousel">
+
+      <button class="prd-btn prd-btn--prev" id="prdPrev" aria-label="前へ">
+        <i class="fa-regular fa-chevron-left" aria-hidden="true"></i>
+      </button>
+
+      <div class="prd-track-wrap">
+        <div class="prd-track" id="prdTrack">
+
+          <!-- カード① インターネット -->
+          <div class="prd-card">
+            <div class="prd-card__media prd-card__media--net js-video" data-video-id="ulelU0EGxUE">
+              
+              <!-- サムネ -->
+              <img src="common/img/movie1.jpg" alt="動画サムネイル">
+          
+              <!-- 再生ボタン -->
+              <div class="prd-card__play">
+                <i class="fa-solid fa-play"></i>
+              </div>
+          
+            </div>
+          
+            <div class="prd-card__body">
+              <span class="prd-card__tag">インターネット</span>
+              <p class="prd-card__name">光インターネット回線</p>
+              <p class="prd-card__desc">
+                開通日の調整から機器の手配まで、ワンストップでお任せいただけます。
+              </p>
+            </div>
+          </div>
+
+          <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll(".js-video").forEach(function (el) {
+              el.addEventListener("click", function () {
+                const videoId = el.dataset.videoId;
+          
+                el.innerHTML = `
+                  <iframe 
+                    width="100%" 
+                    height="100%" 
+                    src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&playsinline=1"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="autoplay; encrypted-media; picture-in-picture"
+                    allowfullscreen>
+                  </iframe>
+                `;
+              });
+            });
+          });
+          </script>
+
+          <style>
+            .prd-card__media {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            aspect-ratio: 16 / 9; /* ←これ神 */
+          }
+          
+          .prd-card__media img,
+          .prd-card__media iframe {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+          }
+          
+          .prd-card__play {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 40px;
+            color: white;
+          }
+          </style>
+
+          <!-- カード② 電話 -->
+          <div class="prd-card">
+            <div class="prd-card__media prd-card__media--net js-video" data-video-id="ulelU0EGxUE">
+              
+              <!-- サムネ -->
+              <img src="common/img/movie2.jpg" alt="動画サムネイル">
+          
+              <!-- 再生ボタン -->
+              <div class="prd-card__play">
+                <i class="fa-solid fa-play"></i>
+              </div>
+          
+            </div>
+          
+            <div class="prd-card__body">
+              <span class="prd-card__tag">電話</span>
+              <p class="prd-card__name">ひかり電話・ビジネスホン</p>
+              <p class="prd-card__desc">
+                IP電話への切り替えから番号ポータビリティまで対応。業務効率が向上します。
+              </p>
+            </div>
+          </div>
+
+          <!-- カード③ 機器 -->
+          <div class="prd-card">
+            <div class="prd-card__media prd-card__media--net js-video" data-video-id="ulelU0EGxUE">
+              
+              <!-- サムネ -->
+              <img src="common/img/movie6.jpg" alt="動画サムネイル">
+          
+              <!-- 再生ボタン -->
+              <div class="prd-card__play">
+                <i class="fa-solid fa-play"></i>
+              </div>
+          
+            </div>
+
+            <div class="prd-card__body">
+              <span class="prd-card__tag">機器</span>
+              <p class="prd-card__name">複合機・周辺機器</p>
+              <p class="prd-card__desc">複合機・プリンター・Wi-Fiルーターの選定から設置・設定まで一括対応します。</p>
+            </div>
+          </div>
+
+          <!-- カード④ セキュリティ -->
+          <div class="prd-card">
+            <div class="prd-card__media prd-card__media--net js-video" data-video-id="ulelU0EGxUE">
+              
+              <!-- サムネ -->
+              <img src="common/img/movie5.jpg" alt="動画サムネイル">
+          
+              <!-- 再生ボタン -->
+              <div class="prd-card__play">
+                <i class="fa-solid fa-play"></i>
+              </div>
+          
+            </div>
+            
+            <div class="prd-card__body">
+              <span class="prd-card__tag">セキュリティ</span>
+              <p class="prd-card__name">防犯カメラ・入退室管理</p>
+              <p class="prd-card__desc">防犯カメラの設計・施工からスマホ遠隔確認まで、安心の店舗環境を構築します。</p>
+            </div>
+          </div>
+
+          <!-- カード⑤ 決済 -->
+          <div class="prd-card">
+            <div class="prd-card__media prd-card__media--net js-video" data-video-id="ulelU0EGxUE">
+              
+              <!-- サムネ -->
+              <img src="common/img/movie4.jpg" alt="動画サムネイル">
+          
+              <!-- 再生ボタン -->
+              <div class="prd-card__play">
+                <i class="fa-solid fa-play"></i>
+              </div>
+          
+            </div>
+            
+            <div class="prd-card__body">
+              <span class="prd-card__tag">決済</span>
+              <p class="prd-card__name">キャッシュレス決済端末</p>
+              <p class="prd-card__desc">クレカ・QRコード決済の端末選定から契約手続き・設定まで、ワンストップで対応。</p>
+            </div>
+          </div>
+
+        </div><!-- /prd-track -->
+      </div><!-- /prd-track-wrap -->
+
+      <button class="prd-btn prd-btn--next" id="prdNext" aria-label="次へ">
+        <i class="fa-regular fa-chevron-right" aria-hidden="true"></i>
+      </button>
+
+    </div><!-- /prd-carousel -->
+
+    <!-- ドットインジケーター -->
+    <div class="prd-dots" id="prdDots" aria-label="スライド位置"></div>
+
+  </div><!-- /prd-inner -->
+</section>
+
 <!-- お困りごと：3×2 フラットパネルグリッド -->
 <section class="pain-section" id="pain">
   <div class="section-inner">
     <div class="section-label reveal">YOUR PAIN</div>
-    <h2 class="section-title reveal">こんなお困りごとは<span>ありませんか？</span></h2>
+    <h2 class="section-title reveal">
+      こんなお困りごとは<span>ありませんか？</span>
+      <div class="rs__card__line3"></div>
+    </h2>
 
     <div class="pain-grid reveal" style="--delay:80ms">
 
@@ -2887,13 +4194,6 @@ footer {
   </div>
 </section>
 
-<!-- =============================================
-     選ばれる理由（新デザイン：画像カード型）
-     ・section.reasons-section + id="reasons" を維持
-     ・既存の clip-path / margin-top / background を引き継ぎ
-     ・section-inner / section-label をグローバルCSSで流用
-     ・カード内部は rs__ プレフィックスで完全分離
-     ============================================= -->
 <section class="reasons-section" id="reasons">
   <div class="section-inner">
 
@@ -3004,7 +4304,7 @@ footer {
           </div>
           <div class="rs__card__body">
             <span class="rs__card__wm" aria-hidden="true">05</span>
-            <h3 class="rs__card__title">比較提案で適正価格</h3>
+            <h3 class="rs__card__title">比較提案で<br>適正価格</h3>
             <div class="rs__card__line"></div>
             <p class="rs__card__desc">複数プランを並べて説明します。特定商品のノルマはなく、最終判断はお客様に。</p>
           </div>
@@ -3016,126 +4316,6 @@ footer {
   </div><!-- /section-inner -->
 </section>
 
-<!-- パック3択 -->
-<section class="packs-section" id="packs">
-  <div class="section-inner">
-    <div class="section-label reveal">PLANS</div>
-    <h2 class="section-title reveal">まず、どの<span>パック</span>か選んでください</h2>
-
-    <!-- ① セルフスクリーニング（規模選択） -->
-    <div class="plns-screen reveal">
-      <p class="plns-screen__label">あなたの事業規模は？</p>
-      <div class="plns-screen__btns">
-        <button class="plns-screen__btn" data-target="pack-start">
-          <span class="plns-screen__scale">〜5名</span>
-          個人・小規模店舗
-        </button>
-        <button class="plns-screen__btn" data-target="pack-standard">
-          <span class="plns-screen__scale">6〜30名</span>
-          中規模店舗・事務所
-        </button>
-        <button class="plns-screen__btn" data-target="pack-premium">
-          <span class="plns-screen__scale">30名〜</span>
-          法人・複数拠点
-        </button>
-      </div>
-    </div>
-
-    <!-- ② プランカード3列 -->
-    <div class="pack-grid">
-
-      <!-- スタートパック -->
-      <div class="pack-card reveal" id="pack-start" style="--delay:0ms">
-        <!-- ヘッダー帯（バッジ統合型） -->
-        <div class="plns-card-header plns-card-header--start">
-          初期コストを抑えて導入可能
-        </div>
-        <div class="plns-card-body">
-          <h3>スタートパック</h3>
-          <p class="pack-target">個人事業・小規模店舗（〜5名）向け</p>
-          <ul class="pack-includes">
-            <li><i class="fa-solid fa-check fa-icon"></i>光インターネット回線手配</li>
-            <li><i class="fa-solid fa-check fa-icon"></i>Wi-Fi設定・接続確認</li>
-            <li><i class="fa-solid fa-check fa-icon"></i>開通後サポート（無制限）</li>
-          </ul>
-          <div class="pack-price">
-            <div class="from">月額</div>
-            <div class="amount">¥4,000<span class="unit">〜</span></div>
-            <div class="from2">（回線種別により変動）</div>
-          </div>
-          <a href="#contact" class="pack-cta">スタートパックで相談する</a>
-        </div>
-      </div>
-
-      <!-- スタンダードパック（推奨） -->
-      <div class="pack-card recommended reveal" id="pack-standard" style="--delay:120ms">
-        <div class="plns-card-header plns-card-header--standard">
-          <i class="fa-solid fa-star" style="font-size:11px;margin-right:5px;opacity:.9"></i>
-          最も選ばれています
-        </div>
-        <div class="plns-card-body">
-          <h3>スタンダードパック</h3>
-          <p class="pack-target">中規模店舗・事務所（6〜30名）向け</p>
-          <ul class="pack-includes">
-            <li><i class="fa-solid fa-check fa-icon"></i>光インターネット回線手配</li>
-            <li><i class="fa-solid fa-check fa-icon"></i>ひかり電話（IP電話）</li>
-            <li><i class="fa-solid fa-check fa-icon"></i>複合機導入・設定</li>
-            <li><i class="fa-solid fa-check fa-icon"></i>Wi-Fi設計・設定</li>
-            <li><i class="fa-solid fa-check fa-icon"></i>開通後サポート（無制限）</li>
-          </ul>
-          <div class="pack-price">
-            <div class="from">月額</div>
-            <div class="amount">¥15,000<span class="unit">〜</span></div>
-            <div class="from2">（構成により変動）</div>
-          </div>
-          <a href="#contact" class="pack-cta">スタンダードパックで相談する</a>
-        </div>
-      </div>
-
-      <!-- プレミアムパック -->
-      <div class="pack-card reveal" id="pack-premium" style="--delay:240ms">
-        <div class="plns-card-header plns-card-header--premium">
-          法人専用プラン
-        </div>
-        <div class="plns-card-body">
-          <h3>プレミアムパック</h3>
-          <p class="pack-target">法人・複数店舗・フルワンストップ</p>
-          <ul class="pack-includes">
-            <li><i class="fa-solid fa-check fa-icon"></i>スタンダード全内容</li>
-            <li><i class="fa-solid fa-check fa-icon"></i>防犯カメラ設置・設定</li>
-            <li><i class="fa-solid fa-check fa-icon"></i>ビジネスホン導入</li>
-            <li><i class="fa-solid fa-check fa-icon"></i>決済端末手配</li>
-            <li><i class="fa-solid fa-check fa-icon"></i>専任担当者対応</li>
-          </ul>
-          <div class="pack-price">
-            <div class="from">費用感</div>
-            <div class="amount" style="font-size:37px">個別見積</div>
-            <div class="from2">（まとめると削減事例多数）</div>
-          </div>
-          <a href="#contact" class="pack-cta">プレミアムパックで相談する</a>
-        </div>
-      </div>
-
-    </div><!-- /pack-grid -->
-
-    <!-- ③ 迷っている方への逃げ道CTA -->
-    <div class="plns-undecided reveal">
-      <div class="plns-undecided__text">
-        <p class="plns-undecided__heading">どれにするか迷っている方へ</p>
-        <p class="plns-undecided__body">
-          「まだ決まっていない」でも大丈夫です。<br>
-          状況をお聞きしてから、最適なプランをご提案します。
-        </p>
-      </div>
-      <a href="#contact" class="plns-undecided__cta">
-        まずは状況を話してみる
-        <i class="fa-regular fa-arrow-right" style="margin-left:8px"></i>
-      </a>
-    </div>
-
-  </div>
-</section>
-
 <!-- サービス（解決軸） -->
 <section class="services-section" id="services">
   <div class="section-inner">
@@ -3144,6 +4324,7 @@ footer {
     <div class="section-label reveal">SERVICES</div>
     <h2 class="section-title reveal">
       あなたの<span>状況</span>から、必要なものが見えてきます。
+        <div class="rs__card__line3"></div>
     </h2>
 
     <!-- タブナビゲーション -->
@@ -3298,6 +4479,7 @@ footer {
       <div class="sv2-left">
         <span class="sv2-situation-tag">安全を守りたい</span>
         <h3 class="sv2-headline">「防犯カメラを設置して、<br>お店を守りたい。」</h3>
+        <div class="rs__card__line3"></div>
         <p class="sv2-lead">
           防犯カメラ・入退室管理システムの<br>
           設計から工事・運用までサポート。
@@ -3377,6 +4559,7 @@ footer {
     <div class="flow-header reveal">
       <div class="section-label">PROCESS</div>
       <h2 class="flow-heading">相談から開通まで、<span>迷わず進める</span></h2>
+      <div class="rs__card__line3"></div>
     </div>
 
     <!-- タイムライン -->
@@ -3399,6 +4582,7 @@ footer {
           </div>
           <div class="flow-tl-card">
             <h4 class="flow-tl-title">無料相談（5分〜）</h4>
+            <div class="rs__card__line2"></div>
             <p class="flow-tl-desc">電話・LINE・フォームいずれでもOK。現状のお困りごとをお聞かせください。必要なサービスが明確でなくてもご相談いただけます。</p>
             <div class="flow-tl-band">相談だけで契約になりません</div>
           </div>
@@ -3414,6 +4598,7 @@ footer {
         <div class="flow-tl-block flow-tl-block--rtl">
           <div class="flow-tl-card">
             <h4 class="flow-tl-title">現地確認・お見積り（費用0円）</h4>
+            <div class="rs__card__line2"></div>
             <p class="flow-tl-desc">担当者が現地にお伺いし、建物の配線状況・必要機器を確認。他社との比較もOKです。見積書はその場で提示します。</p>
             <div class="flow-tl-band">見積りは完全無料 / 断っても追加連絡なし</div>
           </div>
@@ -3435,6 +4620,7 @@ footer {
           </div>
           <div class="flow-tl-card">
             <h4 class="flow-tl-title">最適プランをご提案・選択</h4>
+            <div class="rs__card__line2"></div>
             <p class="flow-tl-desc">複数プランを並べてわかりやすく説明します。わかるまで何度でも説明します。即決は不要です。</p>
             <div class="flow-tl-band">特定商品のノルマ押しつけなし</div>
           </div>
@@ -3450,6 +4636,7 @@ footer {
         <div class="flow-tl-block flow-tl-block--rtl">
           <div class="flow-tl-card">
             <h4 class="flow-tl-title">工事・開通手配（最短翌日〜）</h4>
+            <div class="rs__card__line2"></div>
             <p class="flow-tl-desc">開業・移転日を優先してスケジュールを調整します。建物の管理会社との調整も光サポートが代行します。</p>
             <div class="flow-tl-band">開店日に間に合わせることが最優先</div>
           </div>
@@ -3471,6 +4658,7 @@ footer {
           </div>
           <div class="flow-tl-card">
             <h4 class="flow-tl-title">開通後サポート（無制限・ずっと）</h4>
+            <div class="rs__card__line2"></div>
             <p class="flow-tl-desc">開通後も担当者の直通LINEをご案内します。設定変更・トラブル対応・機器追加、何でもご連絡ください。回数・期間の制限はありません。</p>
             <div class="flow-tl-band">売りっぱなしは一切しません</div>
           </div>
@@ -3485,7 +4673,10 @@ footer {
 <section class="cases-section" id="cases">
   <div class="section-inner">
     <div class="section-label reveal">CASE STUDIES</div>
-    <h2 class="section-title reveal">導入後の変化、<span>3社の実例</span></h2>
+    <h2 class="section-title reveal">
+      導入後の変化、<span>3社の実例</span>
+      <div class="rs__card__line3"></div>
+    </h2>
 
     <div class="cases-grid">
 
@@ -3530,71 +4721,42 @@ footer {
 <section class="faq-section" id="faq">
   <div class="section-inner">
     <div class="section-label reveal">FAQ</div>
-    <h2 class="section-title reveal">相談前に<span>よくある疑問</span></h2>
+    <h2 class="section-title reveal">
+      相談前に<span>よくある疑問</span>
+      <div class="rs__card__line3"></div>
+    </h2>
     <div class="faq-list">
 
       <div class="faq-item reveal">
         <div class="faq-q" onclick="toggleFaq(this)">
-          <span class="faq-q-mark">Q</span>相談するだけで契約になりますか？
+          <span class="faq-q-mark">Q</span>サービスの利用方法は？
         </div>
         <div class="faq-a">
-          <div class="faq-a-inner">なりません。無料相談はヒアリングのみです。その後の提案にも「断り待ち」「しつこいフォロー」は一切ありません。断っても追加の連絡もいたしません。安心してご相談ください。</div>
+          <div class="faq-a-inner">サービスの利用は簡単です。まずはウェブサイトからお申し込みいただき、必要な情報を入力してください。その後、担当者からご連絡いたします。</div>
         </div>
       </div>
       <div class="faq-item reveal" style="--delay:50ms">
         <div class="faq-q" onclick="toggleFaq(this)">
-          <span class="faq-q-mark">Q</span>見積りは無料ですか？現地まで来てもらえますか？
+          <span class="faq-q-mark">Q</span>トラブル時の対応は？
         </div>
         <div class="faq-a">
-          <div class="faq-a-inner">現地確認・見積りは完全無料です。全国対応しており、交通費等もかかりません。建物の配線状況や現地の状況を確認した上で、より正確なご提案をいたします。</div>
+          <div class="faq-a-inner">トラブルが発生した場合は、すぐにサポートセンターにご連絡ください。迅速に対応し、問題を解決いたします。安心してご利用いただけます。</div>
         </div>
       </div>
       <div class="faq-item reveal" style="--delay:100ms">
         <div class="faq-q" onclick="toggleFaq(this)">
-          <span class="faq-q-mark">Q</span>開通までどのくらいかかりますか？
+          <span class="faq-q-mark">Q</span>契約の解除方法は？
         </div>
         <div class="faq-a">
-          <div class="faq-a-inner">物件・回線種別によりますが、最短7日〜が目安です。開業・移転日をお知らせいただければ、スケジュールを最優先で調整します。建物管理会社との調整も弊社が代行します。</div>
+          <div class="faq-a-inner">契約の解除は、所定の手続きを経て行います。詳細は契約書に記載されていますのでご確認ください。ご不明な点があればサポートまでお問い合わせください。</div>
         </div>
       </div>
       <div class="faq-item reveal" style="--delay:150ms">
         <div class="faq-q" onclick="toggleFaq(this)">
-          <span class="faq-q-mark">Q</span>他社と比較検討してもいいですか？
+          <span class="faq-q-mark">Q</span>サービスのエリアは？
         </div>
         <div class="faq-a">
-          <div class="faq-a-inner">もちろんです。むしろ比べてください。他社の見積りをお持ちいただければ、内容を確認した上でご提案します。「比較した上で光サポートにした」という方が最も多いです。</div>
-        </div>
-      </div>
-      <div class="faq-item reveal" style="--delay:200ms">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span class="faq-q-mark">Q</span>月額料金はどのくらいかかりますか？
-        </div>
-        <div class="faq-a">
-          <div class="faq-a-inner">回線種別・機器構成により変わります。スタートパックで月額4,000円〜が目安です。お客様の状況をヒアリングした上で複数プランを並べてご提案しますので、まずはご相談ください。</div>
-        </div>
-      </div>
-      <div class="faq-item reveal" style="--delay:250ms">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span class="faq-q-mark">Q</span>開通後にトラブルが起きたらどうなりますか？
-        </div>
-        <div class="faq-a">
-          <div class="faq-a-inner">担当者の直通LINEをご案内します。開通後のサポートは回数・期間制限なし。「繋がらない」「遅い」「機器を追加したい」何でもご連絡ください。長い保留音やたらい回しはありません。</div>
-        </div>
-      </div>
-      <div class="faq-item reveal" style="--delay:300ms">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span class="faq-q-mark">Q</span>特定のキャリアや機器に縛られますか？
-        </div>
-        <div class="faq-a">
-          <div class="faq-a-inner">ありません。複数のキャリア・メーカーから状況に合ったご提案ができます。特定商品のノルマはなく、最終的な判断はお客様にしていただきます。</div>
-        </div>
-      </div>
-      <div class="faq-item reveal" style="--delay:350ms">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span class="faq-q-mark">Q</span>複数拠点ある場合もまとめて対応できますか？
-        </div>
-        <div class="faq-a">
-          <div class="faq-a-inner">対応できます。全国どこでも対応しており、複数拠点をまとめてご依頼いただくほど管理コストの削減・一本化のご提案がしやすくなります。法人のお客様はぜひプレミアムパックをご相談ください。</div>
+          <div class="faq-a-inner">サービス提供エリアは全国に広がっています。詳細なエリアについては、ウェブサイトのエリアマップをご覧ください。特定の地域に関するご質問もお待ちしております。</div>
         </div>
       </div>
     </div>
@@ -3605,7 +4767,10 @@ footer {
 <section class="contact">
   <div class="contact__inner">
     <div class="section-label reveal">CONTACT</div>
-    <h2 class="section-title reveal">お気軽に<span>お問い合わせください。</span></h2>
+    <h2 class="section-title reveal">
+      お気軽に<span>お問い合わせください。</span>
+      <div class="rs__card__line3"></div>
+    </h2>
 
     <!-- 見出し -->
     <div class="contact__head">
@@ -3680,63 +4845,326 @@ footer {
 <!-- 最終CTA -->
 <section class="final-cta" id="contact">
   <div class="final-cta-inner reveal">
-    <h2>開店・移転の通信まわり、<span>まとめて解決。</span></h2>
-    <p>ネット・電話・機器・セキュリティまでワンストップ対応。<br>最短翌日手配で、業務を止めません。</p>
-    <div class="footer-cta">
-      <a href="tel:0120059600" class="footer-cta-btn footer-cta-btn--tel">
-        <span class="fcta-main">
-          <i class="fa-regular fa-phone" style="font-size:14px;margin-right:6px;"></i>0120-05-9600
-        </span>
-        <span class="fcta-sub">電話で相談 ／ 平日 9:00〜18:00</span>
-      </a>
-      <span class="footer-cta-sep">｜</span>
-      <a href="#" class="footer-cta-btn footer-cta-btn--line">
-        <span class="fcta-main">
-          <i class="fa-brands fa-line" style="font-size:15px;margin-right:6px;"></i>LINEで相談する
-        </span>
+
+    <h2>開店・移転の通信まわり、<span>まとめて解決。</span>
+      <div class="rs__card__line3"></div>
+    </h2>
+    <p class="final-cta-lead">
+      ネット・電話・機器・セキュリティまでワンストップ対応。<br>
+      最短翌日手配で、業務を止めません。
+    </p>
+
+    <!-- 3等幅 CTA グリッド -->
+    <div class="fcta-grid">
+
+      <!-- 電話 -->
+      <a href="tel:0924729600" class="fcta-btn fcta-btn--tel">
+        <span class="fcta-main">092-472-9600</span>
         <span class="fcta-sub">24時間受付・写真送信OK</span>
       </a>
-      <span class="footer-cta-sep">｜</span>
-      <a href="#step-form" class="footer-cta-btn footer-cta-btn--form">
-        <span class="fcta-main">
-          <i class="fa-regular fa-envelope" style="font-size:14px;margin-right:6px;"></i>見積フォーム
-        </span>
-        <span class="fcta-sub">30秒・無料</span>
+
+      <!-- LINE -->
+      <a href="#" class="fcta-btn fcta-btn--line">
+        <span class="fcta-main">LINEで相談する</span>
+        <span class="fcta-sub">24時間受付・写真送信OK</span>
       </a>
-    </div>
+
+      <!-- 見積フォーム -->
+      <a href="#step-form" class="fcta-btn fcta-btn--form">
+        <span class="fcta-main">見積フォーム</span>
+        <span class="fcta-sub">24時間受付・写真送信OK</span>
+      </a>
+
+    </div><!-- /fcta-grid -->
+
     <p class="cta-guarantee">
       費用0円 ／ 相談だけでもOK ／ しつこい営業なし<br>
       比較検討中の方も歓迎しています。
     </p>
+
+  </div>
+</section>
+
+<!-- 会社概要 -->
+<section class="co-section" id="company">
+  <div class="co-inner">
+
+    <!-- セクションヘッダー -->
+    <div class="co-eyebrow reveal">
+      <span class="co-eyebrow__label">COMPANY</span>
+      <h2 class="co-eyebrow__title">会社概要</h2>
+      <p class="co-eyebrow__sub">運営会社に関する基本情報をご案内します。</p><div class="rs__card__line3"></div>
+    </div>
+
+    <!-- メインカード -->
+    <div class="co-card reveal" style="--delay:80ms">
+
+      <!-- テーブル本体 -->
+      <dl class="co-table">
+
+        <div class="co-row">
+          <dt class="co-row__label">会社名</dt>
+          <dd class="co-row__value">株式会社光サポート<br>
+            <span style="font-size:12px;opacity:.6;">Hikari Support Co., Ltd.</span>
+          </dd>
+        </div>
+
+        <div class="co-row">
+          <dt class="co-row__label">役員</dt>
+          <dd class="co-row__value">
+            西口隆祥（代表取締役）<br>
+            石躍貴之（取締役）
+          </dd>
+        </div>
+
+        <div class="co-row">
+          <dt class="co-row__label">所在地</dt>
+          <dd class="co-row__value">
+            〒812-0011<br>
+            福岡県福岡市博多区博多駅前2-5-10 TKビル6F
+          </dd>
+        </div>
+
+        <div class="co-row">
+          <dt class="co-row__label">お問い合わせ</dt>
+          <dd class="co-row__value">
+            092-472-9600（代表）<br>
+            092-472-9602（ＦＡＸ）<br>
+            0120-05-9600（お客様サービスセンター）　
+          </dd>
+        </div>
+
+        <div class="co-row">
+          <dt class="co-row__label">設立</dt>
+          <dd class="co-row__value">2015年10月2日</dd>
+        </div>
+
+        <div class="co-row">
+          <dt class="co-row__label">電気通信届出番号</dt>
+          <dd class="co-row__value">H-07-02049</dd>
+        </div>
+
+        <div class="co-row">
+          <dt class="co-row__label">総務省届出番号</dt>
+          <dd class="co-row__value">J-19-00-781</dd>
+        </div>
+
+        <div class="co-row">
+          <dt class="co-row__label">適格請求書発行<br>事業者番号<br>(インボイス番号)</dt>
+          <dd class="co-row__value">T3290001071604</dd>
+        </div>
+
+        <div class="co-row">
+          <dt class="co-row__label">事業内容</dt>
+          <dd class="co-row__value">
+            <ul class="co-biz-list">
+              <li>インターネット回線の提案・手配・開通サポート</li>
+              <li>法人向け電話・ひかり電話・ビジネスホン導入</li>
+              <li>複合機・OA機器の選定・設置・保守</li>
+              <li>防犯カメラ・入退室管理システムの設計・施工</li>
+              <li>キャッシュレス決済端末の導入サポート</li>
+              <li>開通後のトータルサポート・障害対応</li>
+            </ul>
+          </dd>
+        </div>
+
+        <div class="co-row">
+          <dt class="co-row__label">主要取引銀行</dt>
+          <dd class="co-row__value">
+            <ul class="co-biz-list">
+              <li>GMOあおぞらネット銀行</li>
+              <li>PAYPAY銀行</li>
+              <li>福岡銀行</li>
+              <li>西日本シティ銀行</li>
+            </ul>
+          </dd>
+        </div>
+
+      </dl>
+    </div><!-- /co-card -->
+
+    <!-- 下部装飾 -->
+    <div class="co-deco" aria-hidden="true">
+      <svg class="co-deco__wave" viewBox="0 0 640 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0 24 Q80 4 160 24 Q240 44 320 24 Q400 4 480 24 Q560 44 640 24"
+              fill="none" stroke="#169ccc" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M0 34 Q80 14 160 34 Q240 54 320 34 Q400 14 480 34 Q560 54 640 34"
+              fill="none" stroke="#169ccc" stroke-width="1.5" stroke-linecap="round" opacity=".5"/>
+      </svg>
+      <span class="co-deco__dot co-deco__dot--a"></span>
+      <span class="co-deco__dot co-deco__dot--b"></span>
+      <span class="co-deco__dot co-deco__dot--c"></span>
+      <span class="co-deco__dot co-deco__dot--d"></span>
+      <span class="co-deco__dot co-deco__dot--e"></span>
+    </div>
+
+  </div><!-- /co-inner -->
+</section>
+
+<!-- CTAナビ（オレンジ帯 3ボタン） -->
+<section class="cnav-section" aria-label="コンテンツナビゲーション">
+  <div class="cnav-inner">
+
+    <a href="#services" class="cnav-btn cnav-btn--service">
+      <i class="fa-regular fa-grid-2" aria-hidden="true"></i>
+      サービス案内
+    </a>
+
+    <a href="#flow" class="cnav-btn cnav-btn--support">
+      <i class="fa-regular fa-headset" aria-hidden="true"></i>
+      開通後サポート
+    </a>
+
+    <a href="#packs" class="cnav-btn cnav-btn--all">
+      <i class="fa-regular fa-list" aria-hidden="true"></i>
+      全てのコンテンツ一覧
+    </a>
+
   </div>
 </section>
 
 <!-- フッター -->
 <footer>
-  <div class="footer-inner">
 
-    <!-- ロゴ -->
+  <!-- 本体：ロゴ＋住所（左）/ ナビ3列（右） -->
+  <div class="footer-body">
 
-    <hr class="footer-divider">
-
-    <!-- 下段：会社情報 -->
-    <div class="footer-meta">
-      <div class="footer-info">
-        株式会社光サポート　〒812-0011 福岡県福岡市博多区博多駅前2-5-10 TKビル6F<br>
-        TEL：092-472-9600（代表）／ 0120-05-9600（お客様サービスセンター）<br>
-        設立：2015年10月2日 ｜ 電気通信届出番号：H-07-02049
-      </div>
-      <div class="footer-links">
-        <a href="#">サービス案内</a>
-        <a href="#">開通後サポート</a>
-        <a href="#">会社概要</a>
-        <a href="#">プライバシーポリシー</a>
-      </div>
+    <!-- 左：会社情報 -->
+    <div class="footer-company">
+      <img src="common/img/logo.png"
+           alt="光サポート ロゴ"
+           class="footer-logo-img">
+      <p class="footer-address">
+        〒812-0011<br>
+        福岡県福岡市博多区博多駅前2-5-10 TKビル6F<br>
+        <br>
+        TEL：092-472-9600（代表）<br>
+        0120-05-9600（お客様サービスセンター）<br>
+        <br>
+        設立：2015年10月2日<br>
+        電気通信届出番号：H-07-02049
+      </p>
     </div>
 
+    <!-- 右：ナビ3列 -->
+    <nav class="footer-nav" aria-label="フッターナビゲーション">
+
+      <div class="footer-nav-col">
+        <h4>サービス</h4>
+        <ul>
+          <li><a href="#">パック一覧</a></li>
+          <li><a href="#">サービス詳細</a></li>
+          <li><a href="#">導入事例</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-nav-col">
+        <h4>サポート</h4>
+        <ul>
+          <li><a href="#faq">よくあるご質問</a></li>
+          <li><a href="#">契約者様サポート</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-nav-col">
+        <h4>企業情報</h4>
+        <ul>
+          <li><a href="#">運営会社</a></li>
+          <li><a href="#">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+
+    </nav><!-- /footer-nav -->
+
+  </div><!-- /footer-body -->
+
+  <!-- コピーライト -->
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <p class="footer-copy">© 2026 光サポート</p>
+    </div>
   </div>
-  <div class="footer-copy">© 2026 光サポート</div>
+
+  <!-- TOPボタン -->
+  <div class="cta-top" onclick="scrollToTop()">
+    TOP
+</div>
+
 </footer>
+
+<script>
+/* ============ 製品カルーセル (prd-) ============ */
+(function () {
+  var track   = document.getElementById('prdTrack');
+  var btnPrev = document.getElementById('prdPrev');
+  var btnNext = document.getElementById('prdNext');
+  var dotsWrap= document.getElementById('prdDots');
+
+  if (!track) return;
+
+  var cards    = Array.from(track.querySelectorAll('.prd-card'));
+  var current  = 0;
+
+  /* 1画面に見せるカード数を幅から算出 */
+  function visibleCount() {
+    var w = window.innerWidth;
+    if (w <= 600) return 1;
+    if (w <= 900) return 2;
+    return 3;
+  }
+
+  /* ドット生成 */
+  function buildDots() {
+    dotsWrap.innerHTML = '';
+    var pages = cards.length - visibleCount() + 1;
+    for (var i = 0; i < pages; i++) {
+      var btn = document.createElement('button');
+      btn.className = 'prd-dot' + (i === current ? ' is-active' : '');
+      btn.setAttribute('aria-label', (i + 1) + 'ページ目');
+      btn.dataset.idx = i;
+      btn.addEventListener('click', function () { go(parseInt(this.dataset.idx)); });
+      dotsWrap.appendChild(btn);
+    }
+  }
+
+  function updateDots() {
+    Array.from(dotsWrap.querySelectorAll('.prd-dot')).forEach(function (d, i) {
+      d.classList.toggle('is-active', i === current);
+    });
+  }
+
+  function go(idx) {
+    var pages = cards.length - visibleCount() + 1;
+    current = Math.max(0, Math.min(idx, pages - 1));
+
+    /* カード1枚の幅＋gap(24px)分だけずらす */
+    var cardW  = track.querySelector('.prd-card').offsetWidth;
+    var offset = current * (cardW + 24);
+    track.style.transform = 'translateX(-' + offset + 'px)';
+
+    btnPrev.disabled = current === 0;
+    btnNext.disabled = current >= pages - 1;
+    updateDots();
+  }
+
+  btnPrev.addEventListener('click', function () { go(current - 1); });
+  btnNext.addEventListener('click', function () { go(current + 1); });
+
+  /* 初期化＆リサイズ対応 */
+  function init() {
+    current = 0;
+    track.style.transform = 'translateX(0)';
+    buildDots();
+    btnPrev.disabled = true;
+    btnNext.disabled = cards.length <= visibleCount();
+  }
+
+  init();
+  window.addEventListener('resize', function () { init(); });
+})();
+
+</script>
 
 <script>
 /* ============ ハンバーガーメニュー ============ */
@@ -3896,12 +5324,12 @@ document.querySelectorAll('.sv2-tab').forEach(tab => {
     });
   });
 });
-document.querySelectorAll('.plns-screen__btn').forEach(btn => {
+document.querySelectorAll('.plns-screen__card').forEach(btn => {
   btn.addEventListener('click', function () {
     const targetId = this.dataset.target;
 
     // ボタンのアクティブ状態
-    document.querySelectorAll('.plns-screen__btn')
+    document.querySelectorAll('.plns-screen__card')
       .forEach(b => b.classList.toggle('is-active', b === this));
 
     // カードのハイライト / ディム
@@ -3918,6 +5346,12 @@ document.querySelectorAll('.plns-screen__btn').forEach(btn => {
     }
   });
 });
+function scrollToTop(){
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+}
 </script>
 </body>
 </html>
